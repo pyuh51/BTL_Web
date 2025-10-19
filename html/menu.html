@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thực đơn - Hương Quê Việt</title>
+    <link rel="stylesheet" href="../cssv2/main.css">
+    <link rel="stylesheet" href="../cssv2/responsive.css">
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo" aria-label="Hương Quê Việt - Trang chủ">
+                        <img src="/logo.jpg" alt="Logo Hương Quê Việt" class="logo-img">
+                        <span class="logo-text">Hương Quê <span class="logo-accent">Việt</span></span>
+                        </a>
+            
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            
+            <ul class="nav-menu">
+                <li><a href="index.html">Trang chủ</a></li>
+                <li><a href="about.html">Giới thiệu</a></li>
+                <li><a href="menu.html" class="active">Thực đơn</a></li>
+                <li><a href="booking.html">Đặt bàn</a></li>
+                <li><a href="contact.html">Liên hệ</a></li>
+                <li><a href="cart.html" class="cart-icon"><i class="fas fa-shopping-cart"></i> <span class="cart-count">0</span></a></li>
+                <li><a href="login.html" class="btn-login">Đăng nhập</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Menu Section -->
+    <section class="menu-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Thực Đơn Hương Quê Việt</h2>
+                <p>Khám phá trọn vẹn hương vị ba miền với hơn 60 món ăn đặc sắc</p>
+            </div>
+            
+            <div class="menu-categories">
+                <button class="category-btn active" data-category="all">Tất cả</button>
+                <button class="category-btn" data-category="north">Miền Bắc</button>
+                <button class="category-btn" data-category="central">Miền Trung</button>
+                <button class="category-btn" data-category="south">Miền Nam</button>
+                <button class="category-btn" data-category="chay">Món Chay</button>
+                <button class="category-btn" data-category="lau">Lẩu & Nướng</button>
+                <button class="category-btn" data-category="drink">Đồ Uống</button>
+                <button class="category-btn" data-category="dessert">Tráng Miệng</button>
+            <!--   <button class="category-btn" data-category="combo">Combo</button>  -->
+            </div>
+            
+            <div class="menu-items">
+                <!-- ========== MIỀN BẮC ========== -->
+                <div class="menu-item" data-category="north">
+                    <div class="image-container">
+                        <img src="/anh_cac_mon/mien_bac/pho_bo.jpg" alt="Phở Hà Nội - Hương Quê Việt">
+                    </div>
+                    <h3>Phở Hà Nội <span class="region-badge region-north"></span></h3>
+                    <p class="price">65.000đ</p>
+                    <p class="description">Nước dùng trong, ngọt từ xương, hương vị thanh tao chuẩn Hà Nội</p>
+                    <button class="btn add-to-cart" data-id="101" data-name="Phở Hà Nội" data-price="65000" data-image="/anh_cac_mon/mien_bac/pho_bo.jpg">Thêm vào giỏ</button>
+                </div>
+                
+                <div class="menu-item" data-category="north">
+                    <div class="image-container">
+                        <img src="/anh_cac_mon/mien_bac/bun_cha.jpg" alt="Bún chả - Hương Quê Việt">
+                    </div>
+                    <h3>Bún chả <span class="region-badge region-north"></span></h3>
+                    <p class="price">60.000đ</p>
+                    <p class="description">Thịt nướng thơm lừng, ăn cùng bún tươi và nước chấm chua ngọt</p>
+                    <button class="btn add-to-cart" data-id="102" data-name="Bún chả" data-price="60000" data-image="/anh_cac_mon/mien_bac/bun_cha.jpg">Thêm vào giỏ</button>
+                </div>
+
+                <div class="menu-item" data-category="north">
+                    <div class="image-container">
+                        <img src="/anh_cac_mon/mien_bac/cha_ca_la_vong.jpg" alt="Chả cá Lã Vọng - Hương Quê Việt">
+                    </div>
+                    <h3>Chả cá Lã Vọng <span class="region-badge region-north"></span></h3>
+                    <p class="price">120.000đ</p>
+                    <p class="description">Cá nướng vàng ruộm, ăn kèm thì là, hành lá và bún</p>
+                    <button class="btn add-to-cart" data-id="103" data-name="Chả cá Lã Vọng" data-price="120000" data-image="/anh_cac_mon/mien_bac/cha_ca_la_vong.jpg">Thêm vào giỏ</button>
+                </div>
+
+                <div class="menu-item" data-category="north">
+                    <div class="image-container">
+                        <img src="/anh_cac_mon/mien_bac/banh_cuon_thanh_tri.jpg" alt="Bánh cuốn Thanh Trì - Hương Quê Việt">
+                    </div>
+                    <h3>Bánh cuốn Thanh Trì <span class="region-badge region-north"></span></h3>
+                    <p class="price">50.000đ</p>
+                    <p class="description">Lớp bánh mỏng, dai mềm, ăn cùng chả và nước mắm tỏi ớt</p>
+                    <button class="btn add-to-cart" data-id="104" data-name="Bánh cuốn Thanh Trì" data-price="50000" data-image="/anh_cac_mon/mien_bac/banh_cuon_thanh_tri.jpg">Thêm vào giỏ</button>
+                </div>
+
+                <div class="menu-item" data-category="north">
+                    <div class="image-container">
+                        <img src="/anh_cac_mon/mien_bac/xoi_xeo.jpg" alt="Xôi xéo - Hương Quê Việt">
+                    </div>
+                    <h3>Xôi xéo <span class="region-badge region-north"></span></h3>
+                    <p class="price">40.000đ</p>
+                    <p class="description">Nếp vàng óng, đậu xanh nhuyễn, hành phi giòn thơm</p>
+                    <button class="btn add-to-cart" data-id="105" data-name="Xôi xéo" data-price="40000" data-image="/anh_cac_mon/mien_bac/xoi_xeo.jpg">Thêm vào giỏ</button>
+                </div>
+
+                <div class="menu-item" data-category="north">
+                    <div class="image-container">
+                        <img src="/anh_cac_mon/mien_bac/banh_da_cua_hai_phong.jpg" alt="Bánh đa cua Hải Phòng - Hương Quê Việt">
+                    </div>
+                    <h3>Bánh đa cua Hải Phòng <span class="region-badge region-north"></span></h3>
+                    <p class="price">70.000đ</p>
+                    <p class="description">Nước cua đồng sánh đậm, hòa quyện cùng rau và bún đa đỏ</p>
+                    <button class="btn add-to-cart" data-id="106" data-name="Bánh đa cua Hải Phòng" data-price="70000" data-image="/anh_cac_mon/mien_bac/banh_da_cua_hai_phong.jpg">Thêm vào giỏ</button>
+                </div>
+
+                <div class="menu-item" data-category="north">
+                    <div class="image-container">
+                        <img src="/anh_cac_mon/mien_bac/cha_muc_ha_long.jpg" alt="Chả mực Hạ Long - Hương Quê Việt">
+                    </div>
+                    <h3>Chả mực Hạ Long <span class="region-badge region-north"></span></h3>
+                    <p class="price">95.000đ</p>
+                    <p class="description">Mực giã tay, miếng chả giòn sần sật, vị ngọt tự nhiên</p>
+                    <button class="btn add-to-cart" data-id="107" data-name="Chả mực Hạ Long" data-price="95000" data-image="/anh_cac_mon/mien_bac/cha_muc_ha_long.jpg">Thêm vào giỏ</button>
+                </div>
+
+                <div class="menu-item" data-category="north">
+                    <div class="image-container">
+                        <img src="/anh_cac_mon/mien_bac/bun_ca_ro_dong.jpg" alt="Bún cá rô đồng Hải Dương - Hương Quê Việt">
+                    </div>
+                    <h3>Bún cá rô đồng Hải Dương <span class="region-badge region-north"></span></h3>
+                    <p class="price">65.000đ</p>
+                    <p class="description">Vị ngọt thanh, cá rô đồng chiên vàng ăn cùng bún</p>
+                    <button class="btn add-to-cart" data-id="108" data-name="Bún cá rô đồng Hải Dương" data-price="65000" data-image="/anh_cac_mon/mien_bac/bun_ca_ro_dong.jpg">Thêm vào giỏ</button>
+                </div>
+
+                <div class="menu-item" data-category="north">
+                    <div class="image-container">
+                        <img src="/anh_cac_mon/mien_bac/com_chay_ninh_binh.jpg" alt="Cơm cháy Ninh Bình - Hương Quê Việt">
+                    </div>
+                    <h3>Cơm cháy Ninh Bình <span class="region-badge region-north"></span></h3>
+                    <p class="price">55.000đ</p>
+                    <p class="description">Miếng cơm cháy giòn rụm, chấm kèm sốt dê hoặc ruốc mặn mà</p>
+                    <button class="btn add-to-cart" data-id="109" data-name="Cơm cháy Ninh Bình" data-price="55000" data-image="/anh_cac_mon/mien_bac/com_chay_ninh_binh.jpg">Thêm vào giỏ</button>
+                </div>
+
+                <!-- ========== MIỀN TRUNG ========== -->
+                <div class="menu-item" data-category="central">
+                    <div class="image-container">
+                        <img src="/anh_cac_mon/mien_trung/bun_bo_hue.jpg" alt="Bún bò Huế - Hương Quê Việt">
+                    </div>
+                    <h3>Bún bò Huế <span class="region-badge region-central"></span></h3>
+                    <p class="price">70.000đ</p>
+                    <p class="description">Nước dùng cay nồng, dậy mùi sả ớt và mắm ruốc đặc trưng</p>
+                    <button class="btn add-to-cart" data-id="201" data-name="Bún bò Huế" data-price="70000" data-image="/anh_cac_mon/mien_trung/bun_bo_hue.jpg">Thêm vào giỏ</button>
+                </div>
+
+                <div class="menu-item" data-category="central">
+                    <div class="image-container">
+                        <img src="/anh_cac_mon/mien_trung/com_hen.jpg" alt="Cơm hến - Hương Quê Việt">
+                    </div>
+                    <h3>Cơm hến <span class="region-badge region-central"></span></h3>
+                    <p class="price">50.000đ</p>
+                    <p class="description">Cơm trộn hến, tóp mỡ giòn, rau sống tươi mát và đầy dinh dưỡng</p>
+                    <button class="btn add-to-cart" data-id="202" data-name="Cơm hến" data-price="50000" data-image="/anh_cac_mon/mien_trung/com_hen.jpg">Thêm vào giỏ</button>
+                </div>
+
+                <div class="menu-item" data-category="central">
+                    <div class="image-container">
+                        <img src="/anh_cac_mon/mien_trung/che_hue.jpg" alt="Chè Huế - Hương Quê Việt">
+                    </div>
+                    <h3>Chè Huế <span class="region-badge region-central"></span></h3>
+                    <p class="price">35.000đ</p>
+                    <p class="description">Thưởng thức đa dạng vị ngọt mát từ hơn 20 loại chè</p>
+                    <button class="btn add-to-cart" data-id="203" data-name="Chè Huế" data-price="35000" data-image="/anh_cac_mon/mien_trung/che_hue.jpg">Thêm vào giỏ</button>
+                </div>
+
+                <div class="menu-item" data-category="central">
+                    <div class="image-container">
+                        <img src="/anh_cac_mon/mien_trung/mi_quang.jpg" alt="Mì Quảng - Hương Quê Việt">
+                    </div>
+                    <h3>Mì Quảng <span class="region-badge region-central"></span></h3>
+                    <p class="price">65.000đ</p>
+                    <p class="description">Sợi mì vàng óng, ít nước, đậm vị đậu phộng rang và rau thơm</p>
+                    <button class="btn add-to-cart" data-id="204" data-name="Mì Quảng" data-price="65000" data-image="/anh_cac_mon/mien_trung/mi_quang.jpg">Thêm vào giỏ</button>
+                </div>
+
+                <div class="menu-item" data-category="central">
+                    <div class="image-container">
+                        <img src="/anh_cac_mon/mien_trung/banh_trang_cuon_thit_heo.jpg" alt="Bánh tráng cuốn thịt heo - Hương Quê Việt">
+                    </div>
+                    <h3>Bánh tráng cuốn thịt heo <span class="region-badge region-central"></span></h3>
+                    <p class="price">85.000đ</p>
+                    <p class="description">Thịt heo hai đầu da, ăn kèm rau sống và bánh tráng mỏng</p>
+                    <button class="btn add-to-cart" data-id="205" data-name="Bánh tráng cuốn thịt heo" data-price="85000" data-image="/anh_cac_mon/mien_trung/banh_trang_cuon_thit_heo.jpg">Thêm vào giỏ</button>
+                </div>
+
+                <div class="menu-item" data-category="central">
+                    <div class="image-container">
+                        <img src="/anh_cac_mon/mien_trung/bun_cha_ca.jpg" alt="Bún chả cá Đà Nẵng - Hương Quê Việt">
+                    </div>
+                    <h3>Bún chả cá Đà Nẵng <span class="region-badge region-central"></span></h3>
+                    <p class="price">65.000đ</p>
+                    <p class="description">Nước dùng trong thanh, chả cá thơm ngon, giòn dai</p>
+                    <button class="btn add-to-cart" data-id="206" data-name="Bún chả cá Đà Nẵng" data-price="65000" data-image="/anh_cac_mon/mien_trung/bun_cha_ca.jpg">Thêm vào giỏ</button>
+                </div>
+
+                <div class="menu-item" data-category="central">
+                    <div class="image-container">
+                        <img src="/anh_cac_mon/mien_trung/chao_luon_nghe_an.jpg" alt="Cháo lươn Nghệ An - Hương Quê Việt">
+                    </div>
+                    <h3>Cháo lươn Nghệ An <span class="region-badge region-central"></span></h3>
+                    <p class="price">55.000đ</p>
+                    <p class="description">Cháo nóng hổi, cay nhẹ, thơm mùi nghệ vàng</p>
+                    <button class="btn add-to-cart" data-id="207" data-name="Cháo lươn Nghệ An" data-price="55000" data-image="/anh_cac_mon/mien_trung/chao_luon_nghe_an.jpg">Thêm vào giỏ</button>
+                </div>
+
+                <div class="menu-item" data-category="central">
+                    <div class="image-container">
+                        <img src="/anh_cac_mon/mien_trung/bun_cha_ca.jpg" alt="Bún chả cá Nha Trang - Hương Quê Việt">
+                    </div>
+                    <h3>Bún chả cá Nha Trang <span class="region-badge region-central"></span></h3>
+                    <p class="price">60.000đ</p>
+                    <p class="description">Nước dùng ngọt thanh, chả cá dai giòn hấp dẫn</p>
+                    <button class="btn add-to-cart" data-id="208" data-name="Bún chả cá Nha Trang" data-price="60000" data-image="/anh_cac_mon/mien_trung/bun_cha_ca.jpg">Thêm vào giỏ</button>
+                </div>
+
+                <div class="menu-item" data-category="central">
+                    <div class="image-container">
+                        <img src="/anh_cac_mon/mien_trung/banh_xeo.jpg" alt="Bánh xèo miền Trung - Hương Quê Việt">
+                    </div>
+                    <h3>Bánh xèo miền Trung <span class="region-badge region-central"></span></h3>
+                    <p class="price">55.000đ</p>
+                    <p class="description">Bánh nhỏ, giòn rụm, nhân tôm thịt đậm đà</p>
+                    <button class="btn add-to-cart" data-id="209" data-name="Bánh xèo miền Trung" data-price="55000" data-image="/anh_cac_mon/mien_trung/banh_xeo.jpg">Thêm vào giỏ</button>
+                </div>
+
+                <div class="menu-item" data-category="central">
+                    <div class="image-container">
+                        <img src="/anh_cac_mon/mien_trung/bo_1_nang.jpg" alt="Bò một nắng Krông Pa - Hương Quê Việt">
+                    </div>
+                    <h3>Bò một nắng Krông Pa <span class="region-badge region-central"></span></h3>
+                    <p class="price">135.000đ</p>
+                    <p class="description">Thịt bò phơi một nắng, nướng thơm lừng, chấm muối kiến vàng</p>
+                    <button class="btn add-to-cart" data-id="210" data-name="Bò một nắng Krông Pa" data-price="135000" data-image="/anh_cac_mon/mien_trung/bo_1_nang.jpg">Thêm vào giỏ</button>
+                </div>
+
+                <!-- ========== MIỀN NAM ========== -->
+                <div class="menu-item" data-category="south">
+                    <div class="image-container">
+                        <img src="/anh_cac_mon/mien_nam/com_tam.jpg" alt="Cơm tấm Sài Gòn - Hương Quê Việt">
+                    </div>
+                    <h3>Cơm tấm Sài Gòn <span class="region-badge region-south"></span></h3>
+                    <p class="price">70.000đ</p>
+                    <p class="description">Sườn nướng đậm vị, ăn cùng bì, chả trứng và trứng ốp la</p>
+                    <button class="btn add-to-cart" data-id="301" data-name="Cơm tấm Sài Gòn" data-price="70000" data-image="/anh_cac_mon/mien_nam/com_tam.jpg">Thêm vào giỏ</button>
+                </div>
+
+                <div class="menu-item" data-category="south">
+                    <div class="image-container">
+                        <img src="/anh_cac_mon/mien_nam/hu_tieu_nam_vang.jpg" alt="Hủ tiếu Nam Vang - Hương Quê Việt">
+                    </div>
+                    <h3>Hủ tiếu Nam Vang <span class="region-badge region-south"></span></h3>
+                    <p class="price">65.000đ</p>
+                    <p class="description">Nước trong ngọt xương, topping tôm, thịt, trứng cút đầy đủ</p>
+                    <button class="btn add-to-cart" data-id="302" data-name="Hủ tiếu Nam Vang" data-price="65000" data-image="/anh_cac_mon/mien_nam/hu_tieu_nam_vang.jpg">Thêm vào giỏ</button>
+                </div>
+
+                <div class="menu-item" data-category="south">
+                    <div class="image-container">
+                        <img src="/anh_cac_mon/mien_nam/banh_mi_sai_gon.jpg" alt="Bánh mì Sài Gòn - Hương Quê Việt">
+                    </div>
+                    <h3>Bánh mì Sài Gòn <span class="region-badge region-south"></span></h3>
+                    <p class="price">25.000đ</p>
+                    <p class="description">Vỏ giòn, nhân thơm ngon, đa dạng: chả lụa, pate, thịt nướng</p>
+                    <button class="btn add-to-cart" data-id="303" data-name="Bánh mì Sài Gòn" data-price="25000" data-image="/anh_cac_mon/mien_nam/banh_mi_sai_gon.jpg">Thêm vào giỏ</button>
+                </div>
+
+                <div class="menu-item" data-category="south">
+                    <div class="image-container">
+                        <img src="/anh_cac_mon/mien_nam/bun_mam.jpg" alt="Bún mắm miền Tây - Hương Quê Việt">
+                    </div>
+                    <h3>Bún mắm miền Tây <span class="region-badge region-south"></span></h3>
+                    <p class="price">70.000đ</p>
+                    <p class="description">Đậm vị mắm cá linh, rau sống tươi, tôm thịt đầy đặn</p>
+                    <button class="btn add-to-cart" data-id="304" data-name="Bún mắm miền Tây" data-price="70000" data-image="/anh_cac_mon/mien_nam/bun_mam.jpg">Thêm vào giỏ</button>
+                </div>
+
+                <div class="menu-item" data-category="south">
+                    <div class="image-container">
+                        <img src="/anh_cac_mon/mien_nam/ca_linh_kho_mia.jpg" alt="Cá linh kho mía - Hương Quê Việt">
+                    </div>
+                    <h3>Cá linh kho mía <span class="region-badge region-south"></span></h3>
+                    <p class="price">85.000đ</p>
+                    <p class="description">Cá linh kho rục xương, ngọt từ mía, ăn với cơm trắng</p>
+                    <button class="btn add-to-cart" data-id="305" data-name="Cá linh kho mía" data-price="85000" data-image="/anh_cac_mon/mien_nam/ca_linh_kho_mia.jpg">Thêm vào giỏ</button>
+                </div>
+
+                <div class="menu-item" data-category="south">
+                    <div class="image-container">
+                        <img src="/anh_cac_mon/mien_nam/banh_cong_soc_trang.jpg" alt="Bánh cống Sóc Trăng - Hương Quê Việt">
+                    </div>
+                    <h3>Bánh cống Sóc Trăng <span class="region-badge region-south"></span></h3>
+                    <p class="price">50.000đ</p>
+                    <p class="description">Vỏ giòn, nhân đậu xanh thơm ngon, tôm thịt béo ngậy</p>
+                    <button class="btn add-to-cart" data-id="306" data-name="Bánh cống Sóc Trăng" data-price="50000" data-image="/anh_cac_mon/mien_nam/banh_cong_soc_trang.jpg">Thêm vào giỏ</button>
+                </div>
+
+                <div class="menu-item" data-category="south">
+                    <div class="image-container">
+                        <img src="/anh_cac_mon/mien_nam/bun_nuoc_leo.jpg" alt="Bún nước lèo Trà Vinh - Hương Quê Việt">
+                    </div>
+                    <h3>Bún nước lèo Trà Vinh <span class="region-badge region-south"></span></h3>
+                    <p class="price">65.000đ</p>
+                    <p class="description">Món ăn Khmer độc đáo, nước lèo mắm thơm nồng</p>
+                    <button class="btn add-to-cart" data-id="307" data-name="Bún nước lèo Trà Vinh" data-price="65000" data-image="/anh_cac_mon/mien_nam/bun_nuoc_leo.jpg">Thêm vào giỏ</button>
+                </div>
+
+                <div class="menu-item" data-category="south">
+                    <div class="image-container">
+                        <img src="/anh_cac_mon/mien_nam/banh_khot_vung_tau.jpg" alt="Bánh khọt Vũng Tàu - Hương Quê Việt">
+                    </div>
+                    <h3>Bánh khọt Vũng Tàu <span class="region-badge region-south"></span></h3>
+                    <p class="price">55.000đ</p>
+                    <p class="description">Bánh giòn vàng, nhân tôm, chan nước cốt dừa béo ngậy</p>
+                    <button class="btn add-to-cart" data-id="308" data-name="Bánh khọt Vũng Tàu" data-price="55000" data-image="/anh_cac_mon/mien_nam/banh_khot_vung_tau.jpg">Thêm vào giỏ</button>
+                </div>
+
+                <div class="menu-item" data-category="south">
+                    <div class="image-container">
+                        <img src="/anh_cac_mon/mien_nam/banh_trang.jpg" alt="Bánh tráng phơi sương Trảng Bàng - Hương Quê Việt">
+                    </div>
+                    <h3>Bánh tráng phơi sương <span class="region-badge region-south"></span></h3>
+                    <p class="price">95.000đ</p>
+                    <p class="description">Ăn kèm thịt luộc, rau rừng và nước mắm chua ngọt</p>
+                    <button class="btn add-to-cart" data-id="309" data-name="Bánh tráng phơi sương Trảng Bàng" data-price="95000" data-image="/anh_cac_mon/mien_nam/banh_trang.jpg">Thêm vào giỏ</button>
+                </div>
+
+                <!-- ========== MÓN CHAY ========== -->
+                <div class="menu-item" data-category="chay">
+                    <div class="image-container">
+                        <img src="/anh_cac_mon/mon_chay/pho_chay.jpg" alt="Phở chay - Hương Quê Việt">
+                    </div>
+                    <h3>Phở chay <span class="region-badge" style="background: #4CAF50;"></span></h3>
+                    <p class="price">55.000đ</p>
+                    <p class="description">Nước dùng rau củ ngọt thanh, đậm đà</p>
+                    <button class="btn add-to-cart" data-id="401" data-name="Phở chay" data-price="55000" data-image="/anh_cac_mon/mon_chay/pho_chay.jpg">Thêm vào giỏ</button>
+                </div>
+
+                <div class="menu-item" data-category="chay">
+                    <div class="image-container">
+                        <img src="/anh_cac_mon/mon_chay/bun_rieu_chay.jpg" alt="Bún riêu chay - Hương Quê Việt">
+                    </div>
+                    <h3>Bún riêu chay <span class="region-badge" style="background: #4CAF50;"></span></h3>
+                    <p class="price">50.000đ</p>
+                    <p class="description">Riêu đậu hũ, nấm rơm, thơm ngon đậm đà</p>
+                    <button class="btn add-to-cart" data-id="402" data-name="Bún riêu chay" data-price="50000" data-image="/anh_cac_mon/mon_chay/bun_rieu_chay.jpg">Thêm vào giỏ</button>
+                </div>
+
+                <div class="menu-item" data-category="chay">
+                    <div class="image-container">
+                        <img src="/anh_cac_mon/mon_chay/com_chay_thap_cam.jpg" alt="Cơm chay thập cẩm - Hương Quê Việt">
+                    </div>
+                    <h3>Cơm chay thập cẩm <span class="region-badge" style="background: #4CAF50;"></span></h3>
+                    <p class="price">65.000đ</p>
+                    <p class="description">Cơm gạo lứt, đậu hũ, nấm, rau củ xào chay</p>
+                    <button class="btn add-to-cart" data-id="403" data-name="Cơm chay thập cẩm" data-price="65000" data-image="/anh_cac_mon/mon_chay/com_chay_thap_cam.jpg">Thêm vào giỏ</button>
+                </div>
+
+                <div class="menu-item" data-category="chay">
+                    <div class="image-container">
+                        <img src="/anh_cac_mon/mon_chay/lau_nam_chay.jpg" alt="Lẩu nấm chay - Hương Quê Việt">
+                    </div>
+                    <h3>Lẩu nấm chay <span class="region-badge" style="background: #4CAF50;"></span></h3>
+                    <p class="price">199.000đ</p>
+                    <p class="description">Lẩu nấm tươi, rau sạch, nước dùng chay thanh đạm</p>
+                    <button class="btn add-to-cart" data-id="404" data-name="Lẩu nấm chay" data-price="199000" data-image="/anh_cac_mon/mon_chay/lau_nam_chay.jpg">Thêm vào giỏ</button>
+                </div>
+
+                <!-- ========== LẨU & NƯỚNG ========== -->
+                <div class="menu-item" data-category="lau">
+                    <div class="image-container">
+                        <img src="/anh_cac_mon/lau_nuong/lau_thai.jpg" alt="Lẩu chua cay - Hương Quê Việt">
+                    </div>
+                    <h3>Lẩu chua cay</h3>
+                    <p class="price">299.000đ</p>
+                    <p class="description">Lẩu đậm vị, tôm, mực, cá viên, rau nhúng</p>
+                    <button class="btn add-to-cart" data-id="501" data-name="Lẩu chua cay" data-price="299000" data-image="/anh_cac_mon/lau_nuong/lau_thai.jpg">Thêm vào giỏ</button>
+                </div>
+
+                <div class="menu-item" data-category="lau">
+                    <div class="image-container">
+                        <img src="/anh_cac_mon/lau_nuong/lau_rieu_cua_bap_bo.jpg" alt="Lẩu riêu cua bắp bò - Hương Quê Việt">
+                    </div>
+                    <h3>Lẩu riêu cua bắp bò</h3>
+                    <p class="price">350.000đ</p>
+                    <p class="description">Lẩu riêu cua đậm đà, bắp bò mềm ngon</p>
+                    <button class="btn add-to-cart" data-id="502" data-name="Lẩu riêu cua bắp bò" data-price="350000" data-image="/anh_cac_mon/lau_nuong/lau_rieu_cua_bap_bo.jpg">Thêm vào giỏ</button>
+                </div>
+
+                <div class="menu-item" data-category="lau">
+                    <div class="image-container">
+                        <img src="/anh_cac_mon/lau_nuong/set_nuong.jpg" alt="Set thịt nướng - Hương Quê Việt">
+                    </div>
+                    <h3>Set thịt nướng </h3>
+                    <p class="price">250.000đ</p>
+                    <p class="description">Ba chỉ bò, sườn nướng, chân giò muối</p>
+                    <button class="btn add-to-cart" data-id="503" data-name="Set nướng Hàn Quốc" data-price="250000" data-image="/anh_cac_mon/lau_nuong/set_nuong.jpg">Thêm vào giỏ</button>
+                </div>
+
+                <!-- ========== ĐỒ UỐNG ========== -->
+                <div class="menu-item" data-category="drink">
+                    <div class="image-container">
+                        <img src="/anh_cac_mon/do_uong/tra_dao_cam_sa.jpg" alt="Trà đào cam sả - Hương Quê Việt">
+                    </div>
+                    <h3>Trà đào cam sả</h3>
+                    <p class="price">35.000đ</p>
+                    <p class="description">Trà đào thơm ngon kết hợp cam sả mát lạnh</p>
+                    <button class="btn add-to-cart" data-id="601" data-name="Trà đào cam sả" data-price="35000" data-image="/anh_cac_mon/do_uong/tra_dao_cam_sa.jpg">Thêm vào giỏ</button>
+                </div>
+
+                <div class="menu-item" data-category="drink">
+                    <div class="image-container">
+                        <img src="/anh_cac_mon/do_uong/sinh_to_bo.jpg" alt="Sinh tố bơ - Hương Quê Việt">
+                    </div>
+                    <h3>Sinh tố bơ</h3>
+                    <p class="price">40.000đ</p>
+                    <p class="description">Sinh tố bơ tươi ngon, béo ngậy, thơm mát</p>
+                    <button class="btn add-to-cart" data-id="602" data-name="Sinh tố bơ" data-price="40000" data-image="/anh_cac_mon/do_uong/sinh_to_bo.jpg">Thêm vào giỏ</button>
+                </div>
+
+                <div class="menu-item" data-category="drink">
+                    <div class="image-container">
+                        <img src="/anh_cac_mon/do_uong/ca_phe_sua_da.jpg" alt="Cà phê sữa đá - Hương Quê Việt">
+                    </div>
+                    <h3>Cà phê sữa đá</h3>
+                    <p class="price">25.000đ</p>
+                    <p class="description">Cà phê phin truyền thống, đậm đà hương vị Việt</p>
+                    <button class="btn add-to-cart" data-id="603" data-name="Cà phê sữa đá" data-price="25000" data-image="/anh_cac_mon/do_uong/ca_phe_sua_da.jpg">Thêm vào giỏ</button>
+                </div>
+
+                <div class="menu-item" data-category="drink">
+                    <div class="image-container">
+                        <img src="/anh_cac_mon/do_uong/nuoc_ep_cam.jpg" alt="Nước ép cam tươi - Hương Quê Việt">
+                    </div>
+                    <h3>Nước ép cam tươi</h3>
+                    <p class="price">40.000đ</p>
+                    <p class="description">Cam tươi ép nguyên chất, giàu vitamin C</p>
+                    <button class="btn add-to-cart" data-id="604" data-name="Nước ép cam tươi" data-price="40000" data-image="/anh_cac_mon/do_uong/nuoc_ep_cam.jpg">Thêm vào giỏ</button>
+                </div>
+
+                <div class="menu-item" data-category="drink">
+                    <div class="image-container">
+                        <img src="/anh_cac_mon/do_uong/ca_phe_den_da.jpg" alt="Cà phê đen đá - Hương Quê Việt">
+                    </div>
+                    <h3>Cà phê đen đá</h3>
+                    <p class="price">20.000đ</p>
+                    <p class="description">Cà phê nguyên chất pha phin, vị đắng đặc trưng</p>
+                    <button class="btn add-to-cart" data-id="606" data-name="Cà phê đen đá" data-price="20000" data-image="/anh_cac_mon/do_uong/ca_phe_den_da.jpg">Thêm vào giỏ</button>
+                </div>
+
+                <div class="menu-item" data-category="drink">
+    <div class="image-container">
+        <img src="/anh_cac_mon/do_uong/sinh_to_xoai.jpg" alt="Sinh tố xoài - Hương Quê Việt">
+    </div>
+    <h3>Sinh tố xoài</h3>
+    <p class="price">35.000đ</p>
+    <p class="description">Xoài chín tươi xay nhuyễn, vị ngọt thanh tự nhiên</p>
+    <button class="btn add-to-cart" data-id="608" data-name="Sinh tố xoài" data-price="35000" data-image="/anh_cac_mon/do_uong/sinh_to_xoai.jpg">Thêm vào giỏ</button>
+</div>
+
+                <div class="menu-item" data-category="drink">
+    <div class="image-container">
+        <img src="/anh_cac_mon/do_uong/tra_chanh.jpg" alt="Trà chanh - Hương Quê Việt">
+    </div>
+    <h3>Trà chanh</h3>
+    <p class="price">20.000đ</p>
+    <p class="description">Trà xanh pha chanh tươi, vị chua nhẹ, mát lạnh và đầy sảng khoái</p>
+    <button class="btn add-to-cart" data-id="610" data-name="Trà chanh" data-price="20000" data-image="/anh_cac_mon/do_uong/tra_chanh.jpg">Thêm vào giỏ</button>
+</div>
+
+                <div class="menu-item" data-category="drink">
+    <div class="image-container">
+        <img src="/anh_cac_mon/do_uong/sua_dau_nanh.jpg" alt="Sữa đậu nành - Hương Quê Việt">
+    </div>
+    <h3>Sữa đậu nành</h3>
+    <p class="price">15.000đ</p>
+    <p class="description">Sữa đậu nành nấu truyền thống, thơm béo, bổ dưỡng</p>
+    <button class="btn add-to-cart" data-id="612" data-name="Sữa đậu nành" data-price="15000" data-image="/anh_cac_mon/do_uong/sua_dau_nanh.jpg">Thêm vào giỏ</button>
+</div>
+
+                <div class="menu-item" data-category="drink">
+    <div class="image-container">
+        <img src="/anh_cac_mon/do_uong/nuoc_chanh_day.jpg" alt="Nước chanh dây - Hương Quê Việt">
+    </div>
+    <h3>Nước chanh dây</h3>
+    <p class="price">25.000đ</p>
+    <p class="description">Chanh dây tươi pha cùng đường, vị chua ngọt hấp dẫn</p>
+    <button class="btn add-to-cart" data-id="615" data-name="Nước chanh dây" data-price="25000" data-image="/anh_cac_mon/do_uong/nuoc_chanh_day.jpg">Thêm vào giỏ</button>
+</div>
+                
+                <div class="menu-item" data-category="drink">
+    <div class="image-container">
+        <img src="/anh_cac_mon/do_uong/cacao_sua_da.jpg" alt="Cacao sữa đá - Hương Quê Việt">
+    </div>
+    <h3>Cacao sữa đá</h3>
+    <p class="price">30.000đ</p>
+    <p class="description">Bột cacao nguyên chất pha sữa, vị đắng nhẹ và béo thơm</p>
+    <button class="btn add-to-cart" data-id="617" data-name="Cacao sữa đá" data-price="30000" data-image="/anh_cac_mon/do_uong/cacao_sua_da.jpg">Thêm vào giỏ</button>
+</div>
+
+                <div class="menu-item" data-category="drink">
+    <div class="image-container">
+        <img src="/anh_cac_mon/do_uong/sua_bap.jpg" alt="Sữa bắp - Hương Quê Việt">
+    </div>
+    <h3>Sữa bắp</h3>
+    <p class="price">25.000đ</p>
+    <p class="description">Sữa bắp nấu từ bắp tươi, vị ngọt dịu, béo thơm tự nhiên</p>
+    <button class="btn add-to-cart" data-id="618" data-name="Sữa bắp" data-price="25000" data-image="/anh_cac_mon/do_uong/sua_bap.jpg">Thêm vào giỏ</button>
+</div>
+
+                <div class="menu-item" data-category="drink">
+    <div class="image-container">
+        <img src="/anh_cac_mon/do_uong/nuoc_me_da.jpg" alt="Nước me đá - Hương Quê Việt">
+    </div>
+    <h3>Nước me đá</h3>
+    <p class="price">20.000đ</p>
+    <p class="description">Nước me chua ngọt đậm đà, thêm đá mát lạnh, gợi nhớ tuổi thơ</p>
+    <button class="btn add-to-cart" data-id="619" data-name="Nước me đá" data-price="20000" data-image="/anh_cac_mon/do_uong/nuoc_me_da.jpg">Thêm vào giỏ</button>
+</div>
+
+                <div class="menu-item" data-category="drink">
+    <div class="image-container">
+        <img src="/anh_cac_mon/do_uong/nuoc_dua_tuoi.jpg" alt="Nước dừa tươi - Hương Quê Việt">
+    </div>
+    <h3>Nước dừa tươi</h3>
+    <p class="price">30.000đ</p>
+    <p class="description">Dừa xiêm từ Bến Tre tươi mát, vị ngọt thanh tự nhiên</p>
+    <button class="btn add-to-cart" data-id="620" data-name="Nước dừa tươi" data-price="30000" data-image="/anh_cac_mon/do_uong/nuoc_dua_tuoi.jpg">Thêm vào giỏ</button>
+</div>
+
+                <div class="menu-item" data-category="drink">
+    <div class="image-container">
+        <img src="/anh_cac_mon/do_uong/tra_vai_hoa_nhai.jpg" alt="Trà vải hoa nhài - Hương Quê Việt">
+    </div>
+    <h3>Trà vải hoa nhài</h3>
+    <p class="price">35.000đ</p>
+    <p class="description">Trà hoa nhài thơm dịu kết hợp vị ngọt thanh của vải tươi</p>
+    <button class="btn add-to-cart" data-id="621" data-name="Trà vải hoa nhài" data-price="35000" data-image="/anh_cac_mon/do_uong/tra_vai_hoa_nhai.jpg">Thêm vào giỏ</button>
+</div>
+
+                <div class="menu-item" data-category="drink">
+    <div class="image-container">
+        <img src="/anh_cac_mon/do_uong/soda_chanh_bac_ha.jpg" alt="Soda chanh bạc hà - Hương Quê Việt">
+    </div>
+    <h3>Soda chanh bạc hà</h3>
+    <p class="price">35.000đ</p>
+    <p class="description">Soda mát lạnh pha chanh tươi và syrup bạc hà, giải khát sảng khoái</p>
+    <button class="btn add-to-cart" data-id="622" data-name="Soda chanh bạc hà" data-price="35000" data-image="/anh_cac_mon/do_uong/soda_chanh_bac_ha.jpg">Thêm vào giỏ</button>
+</div>
+
+                <!-- ========== TRÁNG MIỆNG ========== -->
+                <div class="menu-item" data-category="dessert">
+                    <div class="image-container">
+                        <img src="/anh_cac_mon/trang_mieng/che_thap_cam.jpg" alt="Chè các loại - Hương Quê Việt">
+                    </div>
+                    <h3>Chè thập cẩm</h3>
+                    <p class="price">25.000đ</p>
+                    <p class="description">Chè thập cẩm truyền thống thơm ngon</p>
+                    <button class="btn add-to-cart" data-id="701" data-name="Chè các loại" data-price="25000" data-image="/anh_cac_mon/trang_mieng/che_thap_cam.jpg">Thêm vào giỏ</button>
+                </div>
+
+                <div class="menu-item" data-category="dessert">
+                    <div class="image-container">
+                        <img src="/anh_cac_mon/trang_mieng/banh_flan.jpg" alt="Bánh flan caramel - Hương Quê Việt">
+                    </div>
+                    <h3>Bánh flan caramel</h3>
+                    <p class="price">30.000đ</p>
+                    <p class="description">Bánh flan mềm mịn, sốt caramel ngọt dịu</p>
+                    <button class="btn add-to-cart" data-id="702" data-name="Bánh flan caramel" data-price="30000" data-image="/anh_cac_mon/trang_mieng/banh_flan.jpg">Thêm vào giỏ</button>
+                </div>
+
+                <div class="menu-item" data-category="dessert">
+                    <div class="image-container">
+                        <img src="/anh_cac_mon/trang_mieng/kem_dua.jpg" alt="Kem dừa Bến Tre - Hương Quê Việt">
+                    </div>
+                    <h3>Kem dừa Bến Tre</h3>
+                    <p class="price">35.000đ</p>
+                    <p class="description">Kem dừa tươi, béo ngậy, thơm mùi cốt dừa</p>
+                    <button class="btn add-to-cart" data-id="703" data-name="Kem dừa Bến Tre" data-price="35000" data-image="/anh_cac_mon/trang_mieng/kem_dua.jpg">Thêm vào giỏ</button>
+                </div>  
+
+                <div class="menu-item" data-category="dessert">
+    <div class="image-container">
+        <img src="/anh_cac_mon/trang_mieng/che_dau_xanh.jpg" alt="Chè đậu xanh - Hương Quê Việt">
+    </div>
+    <h3>Chè đậu xanh</h3>
+    <p class="price">20.000đ</p>
+    <p class="description">Chè đậu xanh nấu nước cốt dừa, vị ngọt thanh mát</p>
+    <button class="btn add-to-cart" data-id="702" data-name="Chè đậu xanh" data-price="20000" data-image="/anh_cac_mon/trang_mieng/che_dau_xanh.jpg">Thêm vào giỏ</button>
+</div>
+
+                <div class="menu-item" data-category="dessert">
+    <div class="image-container">
+        <img src="/anh_cac_mon/trang_mieng/rau_cau_dua.jpg" alt="Rau câu dừa - Hương Quê Việt">
+    </div>
+    <h3>Rau câu dừa</h3>
+    <p class="price">20.000đ</p>
+    <p class="description">Rau câu nấu trong trái dừa, vị giòn mát và béo nhẹ</p>
+    <button class="btn add-to-cart" data-id="707" data-name="Rau câu dừa" data-price="20000" data-image="/anh_cac_mon/trang_mieng/rau_cau_dua.jpg">Thêm vào giỏ</button>
+</div>
+
+                <div class="menu-item" data-category="dessert">
+    <div class="image-container">
+        <img src="/anh_cac_mon/trang_mieng/che_khuc_bach.jpg" alt="Chè khúc bạch - Hương Quê Việt">
+    </div>
+    <h3>Chè khúc bạch</h3>
+    <p class="price">30.000đ</p>
+    <p class="description">Khúc bạch mềm mịn ăn cùng nhãn tươi, nước đường hạnh nhân</p>
+    <button class="btn add-to-cart" data-id="705" data-name="Chè khúc bạch" data-price="30000" data-image="/anh_cac_mon/trang_mieng/che_khuc_bach.jpg">Thêm vào giỏ</button>
+</div>
+
+                <div class="menu-item" data-category="dessert">
+    <div class="image-container">
+        <img src="/anh_cac_mon/trang_mieng/chuoi_nep_nuong.jpg" alt="Chuối nếp nướng - Hương Quê Việt">
+    </div>
+    <h3>Chuối nếp nướng</h3>
+    <p class="price">25.000đ</p>
+    <p class="description">Chuối bọc nếp nướng than thơm, chan nước cốt dừa béo ngậy</p>
+    <button class="btn add-to-cart" data-id="710" data-name="Chuối nếp nướng" data-price="25000" data-image="/anh_cac_mon/trang_mieng/chuoi_nep_nuong.jpg">Thêm vào giỏ</button>
+</div>
+
+                <div class="menu-item" data-category="dessert">
+    <div class="image-container">
+        <img src="/anh_cac_mon/trang_mieng/xoi_xoai.jpg" alt="Xôi xoài - Hương Quê Việt">
+    </div>
+    <h3>Xôi xoài</h3>
+    <p class="price">35.000đ</p>
+    <p class="description">Xôi nếp dẻo ăn cùng xoài chín và nước cốt dừa thơm béo</p>
+    <button class="btn add-to-cart" data-id="711" data-name="Xôi xoài" data-price="35000" data-image="/anh_cac_mon/trang_mieng/xoi_xoai.jpg">Thêm vào giỏ</button>
+</div>
+
+                <div class="menu-item" data-category="dessert">
+    <div class="image-container">
+        <img src="/anh_cac_mon/trang_mieng/sua_chua_trai_cay.jpg" alt="Yogurt trái cây - Hương Quê Việt">
+    </div>
+    <h3>Sữa chua trái cây</h3>
+    <p class="price">35.000đ</p>
+    <p class="description">Sữa chua dẻo kết hợp trái cây tươi theo mùa, vị chua ngọt hài hòa</p>
+    <button class="btn add-to-cart" data-id="712" data-name="Yogurt trái cây" data-price="35000" data-image="/anh_cac_mon/trang_mieng/sua_chua_trai_cay.jpg">Thêm vào giỏ</button>
+</div>
+
+                <div class="menu-item" data-category="dessert">
+    <div class="image-container">
+        <img src="/anh_cac_mon/trang_mieng/kem_matcha.jpg" alt="Kem matcha - Hương Quê Việt">
+    </div>
+    <h3>Kem matcha</h3>
+    <p class="price">35.000đ</p>
+    <p class="description">Kem vị trà xanh Nhật Bản, thanh mát và thơm nhẹ vị matcha nguyên chất</p>
+    <button class="btn add-to-cart" data-id="714" data-name="Kem matcha" data-price="35000" data-image="/anh_cac_mon/trang_mieng/kem_matcha.jpg">Thêm vào giỏ</button>
+</div>
+
+                <div class="menu-item" data-category="dessert">
+    <div class="image-container">
+        <img src="/anh_cac_mon/trang_mieng/banh_chuoi_nuong.jpg" alt="Bánh chuối nướng - Hương Quê Việt">
+    </div>
+    <h3>Bánh chuối nướng</h3>
+    <p class="price">28.000đ</p>
+    <p class="description">Chuối chín hòa cùng nước cốt dừa và bánh mì, nướng thơm vàng hấp dẫn</p>
+    <button class="btn add-to-cart" data-id="717" data-name="Bánh chuối nướng" data-price="28000" data-image="/anh_cac_mon/trang_mieng/banh_chuoi_nuong.jpg">Thêm vào giỏ</button>
+</div>
+
+                <div class="menu-item" data-category="dessert">
+    <div class="image-container">
+        <img src="/anh_cac_mon/trang_mieng/banh_bo_hap.jpg" alt="Bánh bò hấp - Hương Quê Việt">
+    </div>
+    <h3>Bánh bò hấp</h3>
+    <p class="price">22.000đ</p>
+    <p class="description">Bánh bò xốp mềm, thơm nước cốt dừa, ăn kèm mè rang</p>
+    <button class="btn add-to-cart" data-id="719" data-name="Bánh bò hấp" data-price="22000" data-image="/anh_cac_mon/trang_mieng/banh_bo_hap.jpg">Thêm vào giỏ</button>
+</div>
+
+                <div class="menu-item" data-category="dessert">
+    <div class="image-container">
+        <img src="/anh_cac_mon/trang_mieng/che_nep_cam_sua_chua.jpg" alt="Chè nếp cẩm sữa chua - Hương Quê Việt">
+    </div>
+    <h3>Chè nếp cẩm sữa chua</h3>
+    <p class="price">32.000đ</p>
+    <p class="description">Nếp cẩm dẻo thơm ăn cùng sữa chua, vị chua béo mát lạnh</p>
+    <button class="btn add-to-cart" data-id="722" data-name="Chè nếp cẩm sữa chua" data-price="32000" data-image="/anh_cac_mon/trang_mieng/che_nep_cam_sua_chua.jpg">Thêm vào giỏ</button>
+</div>
+
+                <div class="menu-item" data-category="dessert">
+    <div class="image-container">
+        <img src="/anh_cac_mon/trang_mieng/che_khoai_deo.jpg" alt="Chè khoai dẻo - Hương Quê Việt">
+    </div>
+    <h3>Chè khoai dẻo</h3>
+    <p class="price">30.000đ</p>
+    <p class="description">Khoai lang, khoai môn, trân châu dẻo dai trong nước cốt dừa ngọt dịu</p>
+    <button class="btn add-to-cart" data-id="720" data-name="Chè khoai dẻo" data-price="30000" data-image="/anh_cac_mon/trang_mieng/che_khoai_deo.jpg">Thêm vào giỏ</button>
+</div>
+
+                <div class="menu-item" data-category="dessert">
+    <div class="image-container">
+        <img src="/anh_cac_mon/trang_mieng/che_buoi.jpg" alt="Chè bưởi - Hương Quê Việt">
+    </div>
+    <h3>Chè bưởi</h3>
+    <p class="price">25.000đ</p>
+    <p class="description">Cùi bưởi giòn dai nấu cùng đậu xanh, nước cốt dừa béo ngậy</p>
+    <button class="btn add-to-cart" data-id="704" data-name="Chè bưởi" data-price="25000" data-image="/anh_cac_mon/trang_mieng/che_buoi.jpg">Thêm vào giỏ</button>
+</div>
+
+                <!-- ========== COMBO ========== -->
+           
+            <!--  <div class="menu-item" data-category="combo">
+                    <div class="image-container">
+                        <img src="/" alt="Combo Gia Đình - Hương Quê Việt">
+                    </div>
+                    <h3>Combo Gia Đình</h3>
+                    <p class="price">499.000đ</p>
+                    <p class="description">4 món chính + 2 món phụ + 4 nước uống. Dành cho 4-6 người</p>
+                    <button class="btn add-to-cart" data-id="801" data-name="Combo Gia Đình" data-price="499000" data-image="">Thêm vào giỏ</button>
+                </div>
+
+                <div class="menu-item" data-category="combo">
+                    <div class="image-container">
+                        <img src="/" alt="Combo Bạn Bè - Hương Quê Việt">
+                    </div>
+                    <h3>Combo Bạn Bè</h3>
+                    <p class="price">299.000đ</p>
+                    <p class="description">3 món chính + 2 món phụ + 2 nước uống. Dành cho 2-3 người</p>
+                    <button class="btn add-to-cart" data-id="802" data-name="Combo Bạn Bè" data-price="299000" data-image="">Thêm vào giỏ</button>
+                </div>
+
+                <div class="menu-item" data-category="combo">
+                    <div class="image-container">
+                        <img src="/" alt="Combo Hẹn hò lãng mạn - Hương Quê Việt">
+                    </div>
+                    <h3>Combo Hẹn hò lãng mạn</h3>
+                    <p class="price">399.000đ</p>
+                    <p class="description">2 món chính + 1 món khai vị + 2 nước uống + tráng miệng</p>
+                    <button class="btn add-to-cart" data-id="803" data-name="Combo Hẹn hò lãng mạn" data-price="399000" data-image="">Thêm vào giỏ</button>
+                </div>
+            -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>Hương Quê Việt</h3>
+                    <p>Mang hồn quê vào từng món ăn - Trải nghiệm ẩm thực ba miền Bắc, Trung, Nam tại 15 chi nhánh trên toàn quốc.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Liên kết nhanh</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Trang chủ</a></li>
+                        <li><a href="about.html">Về chúng tôi</a></li>
+                        <li><a href="menu.html">Thực đơn</a></li>
+                        <li><a href="booking.html">Đặt bàn</a></li>
+                        <li><a href="contact.html">Liên hệ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Chi nhánh chính</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Hà Nội: 3 chi nhánh</a></li>
+                        <li><a href="#">TP.HCM: 4 chi nhánh</a></li>
+                        <li><a href="#">Đà Nẵng: 2 chi nhánh</a></li>
+                        <li><a href="#">Huế: 1 chi nhánh</a></li>
+                        <li><a href="#">Cần Thơ: 1 chi nhánh</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Liên hệ</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Trụ sở: 123 Đường Ẩm Thực, Q.1, TP.HCM</p>
+                    <p><i class="fas fa-phone"></i> 1900 1234</p>
+                    <p><i class="fas fa-envelope"></i> info@huongqueviet.com</p>
+                    <p><i class="fas fa-clock"></i> Mở cửa: 9:00 - 22:00 hàng ngày</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Hương Quê Việt. Giữ gìn tinh hoa ẩm thực Việt.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/cart.js"></script>
+    <script>
+        // Lọc danh mục thực đơn
+        document.addEventListener('DOMContentLoaded', function() {
+            const categoryBtns = document.querySelectorAll('.category-btn');
+            const menuItems = document.querySelectorAll('.menu-item');
+            
+            categoryBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Xóa active khỏi tất cả nút
+                    categoryBtns.forEach(b => b.classList.remove('active'));
+                    // Thêm active cho nút được nhấn
+                    this.classList.add('active');
+                    
+                    const category = this.getAttribute('data-category');
+                    
+                    menuItems.forEach(item => {
+                        if (category === 'all' || item.getAttribute('data-category') === category) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            // Xử lý ảnh bị lỗi
+            const images = document.querySelectorAll('.menu-item img');
+            images.forEach(img => {
+                img.addEventListener('error', function() {
+                    this.src = 'images/placeholder.jpg';
+                    this.alt = 'Ảnh đang được cập nhật';
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,240 @@
+
+/* Modern Form System với Enhanced Interactions */
+.form-container {
+    max-width: 600px;
+    margin: 100px auto 50px;
+    padding: var(--space-2xl);
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--muted-border);
+    position: relative;
+    overflow: hidden;
+}
+
+.form-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--primary-gradient);
+}
+
+.form-container h2 {
+    text-align: center;
+    margin-bottom: var(--space-xl);
+    color: var(--dark-color);
+    font-size: 1.75rem;
+}
+
+.form-group {
+    margin-bottom: var(--space-lg);
+    position: relative;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: var(--space-sm);
+    font-weight: 600;
+    color: var(--dark-color);
+    transition: all var(--transition);
+}
+
+/* Floating Labels Effect */
+.form-group.focused label {
+    color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+.form-control {
+    width: 100%;
+    padding: 1rem 1.25rem;
+    border: 2px solid var(--muted-border);
+    border-radius: var(--radius);
+    font-family: inherit;
+    font-size: 1rem;
+    transition: all var(--transition);
+    background: var(--white);
+    position: relative;
+}
+
+.form-control:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(26, 127, 92, 0.1);
+    transform: translateY(-1px);
+}
+
+.form-control:hover {
+    border-color: var(--primary-light);
+}
+
+/* Enhanced Select */
+select.form-control {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%237f8c8d'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1.25rem;
+    padding-right: 3rem;
+}
+
+/* Textarea Styles */
+textarea.form-control {
+    min-height: 150px;
+    resize: vertical;
+    line-height: 1.6;
+    padding: 1.25rem;
+}
+
+/* Form Row Layout */
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: var(--space-md);
+}
+
+/* Form Options */
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-lg);
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+}
+
+/* Enhanced Checkbox */
+.checkbox {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all var(--transition);
+}
+
+.checkbox:hover {
+    transform: translateY(-1px);
+}
+
+.checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.checkmark {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--muted-border);
+    border-radius: var(--radius-sm);
+    margin-right: var(--space-sm);
+    position: relative;
+    transition: all var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.checkbox input:checked + .checkmark {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.checkbox input:checked + .checkmark::after {
+    content: '✓';
+    color: var(--white);
+    font-size: 0.875rem;
+    font-weight: bold;
+}
+
+.checkbox:hover .checkmark {
+    border-color: var(--primary-color);
+}
+
+/* Radio Buttons */
+.radio-group {
+    display: flex;
+    gap: var(--space-md);
+}
+
+.radio {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.radio input {
+    margin-right: var(--space-sm);
+}
+
+/* Validation States */
+.form-control.success {
+    border-color: var(--success-color);
+    box-shadow: 0 0 0 4px rgba(39, 174, 96, 0.1);
+}
+
+.form-control.error {
+    border-color: var(--error-color);
+    box-shadow: 0 0 0 4px rgba(231, 76, 60, 0.1);
+}
+
+.validation-message {
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.validation-message.success {
+    color: var(--success-color);
+}
+
+.validation-message.error {
+    color: var(--error-color);
+}
+
+/* Form Groups với Icons */
+.form-group.with-icon {
+    position: relative;
+}
+
+.form-group.with-icon .form-control {
+    padding-left: 3rem;
+}
+
+.form-group.with-icon .icon {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-muted);
+    transition: color var(--transition);
+}
+
+.form-group.with-icon.focused .icon {
+    color: var(--primary-color);
+}
+
+/* Loading State cho Form */
+.form-loading {
+    position: relative;
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+.form-loading::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

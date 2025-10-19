@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giỏ hàng - Hương Quê Việt</title>
+    <link rel="stylesheet" href="../cssv2/main.css">
+    <link rel="stylesheet" href="../cssv2/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo" aria-label="Hương Quê Việt - Trang chủ">
+                        <img src="/logo.jpg" alt="Logo Hương Quê Việt" class="logo-img">
+                        <span class="logo-text">Hương Quê <span class="logo-accent">Việt</span></span>
+                        </a>
+            
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            
+            <ul class="nav-menu">
+                <li><a href="index.html">Trang chủ</a></li>
+                <li><a href="about.html">Giới thiệu</a></li>
+                <li><a href="menu.html">Thực đơn</a></li>
+                <li><a href="booking.html">Đặt bàn</a></li>
+                <li><a href="contact.html">Liên hệ</a></li>
+                <li><a href="cart.html" class="cart-icon active"><i class="fas fa-shopping-cart"></i> <span class="cart-count">0</span></a></li>
+                <li><a href="login.html" class="btn-login">Đăng nhập</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Cart Section -->
+    <section class="cart-section">
+        <div class="container cart-container">
+            <div class="cart-header">
+                <h2>Giỏ Hàng Của Bạn</h2>
+                <p>Kiểm tra và hoàn tất đơn hàng để thưởng thức hương vị quê hương</p>
+            </div>
+            
+            <div class="cart-content">
+                <div class="cart-items-container">
+                    <div id="cart-items" class="cart-items">
+                        <!-- Nội dung giỏ hàng sẽ được tải động bằng JavaScript -->
+                    </div>
+                </div>
+                
+                <div class="cart-summary">
+                    <h3>Tổng đơn hàng</h3>
+                    <div class="summary-details">
+                        <div class="summary-row">
+                            <span>Tạm tính:</span>
+                            <span id="cart-subtotal">0₫</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Giảm giá:</span>
+                            <span id="cart-discount">-0₫</span>
+                        </div>
+                        <div class="summary-row total-row">
+                            <span>Tổng cộng:</span>
+                            <span id="cart-total">0₫</span>
+                        </div>
+                    </div>
+                    
+                    <form class="promo-code">
+                        <input type="text" id="promo-code" placeholder="Nhập mã giảm giá">
+                        <button type="submit" class="btn btn-promo">Áp dụng</button>
+                    </form>
+                    
+                    <div class="checkout-actions">
+                        <button class="btn btn-continue-shopping" onclick="window.location.href='menu.html'">
+                            <i class="fas fa-arrow-left"></i>
+                            Tiếp tục mua hàng
+                        </button>
+                        <button class="btn btn-primary checkout-btn">
+                            <i class="fas fa-credit-card"></i>
+                            Tiến hành thanh toán
+                        </button>
+                    </div>
+
+                    <div class="security-notice">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Giao dịch an toàn - Bảo mật thông tin</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>Hương Quê Việt</h3>
+                    <p>Mang hồn quê vào từng món ăn - Trải nghiệm ẩm thực ba miền Bắc, Trung, Nam tại 15 chi nhánh trên toàn quốc.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Liên kết nhanh</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Trang chủ</a></li>
+                        <li><a href="about.html">Về chúng tôi</a></li>
+                        <li><a href="menu.html">Thực đơn</a></li>
+                        <li><a href="booking.html">Đặt bàn</a></li>
+                        <li><a href="contact.html">Liên hệ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Chi nhánh chính</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Hà Nội: 3 chi nhánh</a></li>
+                        <li><a href="#">TP.HCM: 4 chi nhánh</a></li>
+                        <li><a href="#">Đà Nẵng: 2 chi nhánh</a></li>
+                        <li><a href="#">Huế: 1 chi nhánh</a></li>
+                        <li><a href="#">Cần Thơ: 1 chi nhánh</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Liên hệ</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Trụ sở: 123 Đường Ẩm Thực, Q.1, TP.HCM</p>
+                    <p><i class="fas fa-phone"></i> 1900 1234</p>
+                    <p><i class="fas fa-envelope"></i> info@huongqueviet.com</p>
+                    <p><i class="fas fa-clock"></i> Mở cửa: 9:00 - 22:00 hàng ngày</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Hương Quê Việt. Giữ gìn tinh hoa ẩm thực Việt.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/cart.js"></script>
+</body>
+</html>

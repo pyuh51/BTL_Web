@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đặt bàn - Hương Quê Việt</title>
+    <link rel="stylesheet" href="../cssv2/main.css">
+    <link rel="stylesheet" href="../cssv2/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo" aria-label="Hương Quê Việt - Trang chủ">
+                        <img src="/logo.jpg" alt="Logo Hương Quê Việt" class="logo-img">
+                        <span class="logo-text">Hương Quê <span class="logo-accent">Việt</span></span>
+                        </a>
+            
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            
+            <ul class="nav-menu">
+                <li><a href="index.html">Trang chủ</a></li>
+                <li><a href="about.html">Giới thiệu</a></li>
+                <li><a href="menu.html">Thực đơn</a></li>
+                <li><a href="booking.html" class="active">Đặt bàn</a></li>
+                <li><a href="contact.html">Liên hệ</a></li>
+                <li><a href="cart.html" class="cart-icon"><i class="fas fa-shopping-cart"></i> <span class="cart-count">0</span></a></li>
+                <li><a href="login.html" class="btn-login">Đăng nhập</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Booking Section -->
+    <section class="booking-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Đặt Bàn Hương Quê Việt</h2>
+                <p>Đặt bàn trực tuyến để có trải nghiệm ẩm thực tốt nhất tại 15 chi nhánh của chúng tôi</p>
+            </div>
+            
+            <div class="booking-container">
+                <div class="booking-form">
+                    <form id="booking-form">
+                        <div class="form-group">
+                            <label for="name">Họ và tên *</label>
+                            <input type="text" id="name" name="name" class="form-control" placeholder="Nhập họ và tên đầy đủ" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Số điện thoại *</label>
+                            <input type="tel" id="phone" name="phone" class="form-control" placeholder="Nhập số điện thoại"required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="Nhập email"class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="branch">Chọn chi nhánh *</label>
+                            <select id="branch" name="branch" class="form-control" required>
+                                <option value="">Chọn chi nhánh</option>
+                                <optgroup label="Miền Bắc">
+                                    <option value="hanoi_1">Hà Nội - Ba Đình</option>
+                                    <option value="hanoi_2">Hà Nội - Cầu Giấy</option>
+                                    <option value="hanoi_3">Hà Nội - Tây Hồ</option>
+                                    <option value="haiphong">Hải Phòng</option>
+                                    <option value="quangninh">Quảng Ninh</option>
+                                </optgroup>
+                                <optgroup label="Miền Trung">
+                                    <option value="hue">Huế</option>
+                                    <option value="danang_1">Đà Nẵng - Sơn Trà</option>
+                                    <option value="danang_2">Đà Nẵng - Hải Châu</option>
+                                    <option value="nhatrang">Nha Trang</option>
+                                </optgroup>
+                                <optgroup label="Miền Nam">
+                                    <option value="hcm_1">TP.HCM - Quận 1</option>
+                                    <option value="hcm_2">TP.HCM - Phú Nhuận</option>
+                                    <option value="hcm_3">TP.HCM - Thủ Đức</option>
+                                    <option value="hcm_4">TP.HCM - Bình Thạnh</option>
+                                    <option value="cantho">Cần Thơ</option>
+                                    <option value="vungtau">Vũng Tàu</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="date">Ngày *</label>
+                                <input type="date" id="date" name="date" class="form-control" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="time">Giờ *</label>
+                                <input type="time" id="time" name="time" class="form-control" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="guests">Số người *</label>
+                                <select id="guests" name="guests" class="form-control" required>
+                                    <option value="">Chọn số người</option>
+                                    <option value="1">1 người</option>
+                                    <option value="2">2 người</option>
+                                    <option value="3">3 người</option>
+                                    <option value="4">4 người</option>
+                                    <option value="5">5 người</option>
+                                    <option value="6">6 người</option>
+                                    <option value="7">7 người</option>
+                                    <option value="8">8 người</option>
+                                    <option value="9">9 người</option>
+                                    <option value="10">10 người</option>
+                                    <option value="more">Trên 10 người</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Ghi chú đặc biệt</label>
+                            <textarea id="message" name="message" class="form-control" placeholder="Ví dụ: Yêu cầu chỗ ngồi gần cửa sổ, kỷ niệm sinh nhật, yêu cầu món ăn đặc biệt..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn" >Đặt bàn ngay</button>
+                    </form>
+                </div>
+                
+                <div class="booking-info">
+                    <h3>Thông tin đặt bàn</h3>
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>Giờ mở cửa</h4>
+                            <p>Thứ 2 - Chủ nhật: 9:00 - 22:00</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <i class="fas fa-users"></i>
+                        <div>
+                            <h4>Nhóm đông</h4>
+                            <p>Đối với nhóm trên 10 người, vui lòng gọi hotline 1900 1234 để được phục vụ tốt nhất.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <i class="fas fa-utensils"></i>
+                        <div>
+                            <h4>Đặt trước món ăn</h4>
+                            <p>Bạn có thể đặt trước món ăn khi đặt bàn để tiết kiệm thời gian chờ đợi.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <i class="fas fa-calendar-alt"></i>
+                        <div>
+                            <h4>Hủy đặt bàn</h4>
+                            <p>Vui lòng thông báo hủy đặt bàn trước ít nhất 2 giờ qua hotline 1900 1234.</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <i class="fas fa-gift"></i>
+                        <div>
+                            <h4>Ưu đãi đặc biệt</h4>
+                            <p>Giảm 10% cho đơn đặt bàn trước 2 ngày. Tặng nước uống cho khách đặt bàn qua website.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>Hương Quê Việt</h3>
+                    <p>Mang hồn quê vào từng món ăn - Trải nghiệm ẩm thực ba miền Bắc, Trung, Nam tại 15 chi nhánh trên toàn quốc.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Liên kết nhanh</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Trang chủ</a></li>
+                        <li><a href="about.html">Về chúng tôi</a></li>
+                        <li><a href="menu.html">Thực đơn</a></li>
+                        <li><a href="booking.html">Đặt bàn</a></li>
+                        <li><a href="contact.html">Liên hệ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Chi nhánh chính</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Hà Nội: 3 chi nhánh</a></li>
+                        <li><a href="#">TP.HCM: 4 chi nhánh</a></li>
+                        <li><a href="#">Đà Nẵng: 2 chi nhánh</a></li>
+                        <li><a href="#">Huế: 1 chi nhánh</a></li>
+                        <li><a href="#">Cần Thơ: 1 chi nhánh</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Liên hệ</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Trụ sở: 123 Đường Ẩm Thực, Q.1, TP.HCM</p>
+                    <p><i class="fas fa-phone"></i> 1900 1234</p>
+                    <p><i class="fas fa-envelope"></i> info@huongqueviet.com</p>
+                    <p><i class="fas fa-clock"></i> Mở cửa: 9:00 - 22:00 hàng ngày</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Hương Quê Việt. Giữ gìn tinh hoa ẩm thực Việt.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/booking.js"></script>
+</body>
+</html>
