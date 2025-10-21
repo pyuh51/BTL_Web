@@ -4,7 +4,7 @@
 }
 
 .hero {
-  background: url("../images/about_main-background/main_background.jpg")
+  background: url("../../images/about_main-background/main-background.jpg")
     center/cover no-repeat fixed;
   min-height: 100vh;
   display: flex;
