@@ -156,7 +156,6 @@ class AuthSystem {
     const password = formData.get("password") || "";
     const rememberMe = formData.get("remember");
 
-    // Validation
     if (!this.isValidEmail(email)) {
       this.showNotification("Email không hợp lệ", "error");
       return;
@@ -338,7 +337,7 @@ class AuthSystem {
       if (redirect === "booking") {
         window.location.href = "booking.html";
       } else {
-        window.location.href = "index.html";
+        window.location.href = "../index.html";
       }
     }, 1200);
   }
@@ -352,7 +351,7 @@ class AuthSystem {
       );
 
       setTimeout(() => {
-        window.location.href = "index.html";
+        window.location.href = "../index.html";
       }, 1200);
     }
   }
