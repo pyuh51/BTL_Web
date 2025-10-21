@@ -151,7 +151,7 @@
       });
 
       function loadOrderHistory() {
-        // Lấy dữ liệu từ localStorage - sửa thành 'userOrders'
+        // Lấy dữ liệu từ localStorage
         const orders = JSON.parse(localStorage.getItem("userOrders")) || [];
         const ordersList = document.getElementById("orders-list");
         const noOrders = document.getElementById("no-orders");
@@ -161,7 +161,7 @@
         if (orders.length > 0) {
           noOrders.style.display = "none";
           ordersList.style.display = "block";
-          ordersList.innerHTML = ""; // Clear existing content
+          ordersList.innerHTML = "";
 
           // Hiển thị orders theo thứ tự mới nhất trước
           orders.forEach((order) => {
