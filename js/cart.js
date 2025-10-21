@@ -1,7 +1,7 @@
 class CartSystem {
   constructor() {
     this.cart = JSON.parse(localStorage.getItem("cart")) || [];
-    this.defaultImage = "/images/default-food.jpg";
+    this.defaultImage = "images/default-food.jpg";
     this.init();
   }
 
@@ -68,18 +68,16 @@ class CartSystem {
     if (
       path.startsWith("http") ||
       path.startsWith("//") ||
-      path.startsWith("/")
+      path.startsWith("../")
     )
       return path;
 
-    path = path.replace(/^(\.\/)+/, "").replace(/^(\.\.\/)+/, "");
-
     if (path.includes("images")) {
-      if (!path.startsWith("/")) path = "/" + path;
+      if (!path.startsWith("../")) return "../" + path;
       return path;
     }
 
-    return "/images/" + path;
+    return "../images/" + path;
   }
 
   setupCartPage() {
