@@ -1,0 +1,421 @@
+/* Cart Page Styles */
+.cart-section {
+    padding: 100px 0;
+    background: var(--light-color);
+    min-height: 80vh;
+}
+
+.cart-content {
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: 40px;
+    align-items: start;
+}
+
+.cart-items-container {
+    background: var(--white);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+.cart-items {
+    max-height: 600px;
+    overflow-y: auto;
+}
+
+.cart-item {
+    display: grid;
+    grid-template-columns: 100px 1fr auto auto auto;
+    gap: 20px;
+    align-items: center;
+    padding: 25px;
+    border-bottom: 1px solid #eee;
+    transition: var(--transition);
+    background: var(--white);
+}
+
+/* Sửa hiệu ứng hover - đảm bảo chữ vẫn nhìn thấy */
+.cart-item:hover {
+    background: #f8f9fa !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Đảm bảo màu chữ không bị ảnh hưởng bởi hover */
+.cart-item:hover .cart-item-details h3,
+.cart-item:hover .cart-item-category,
+.cart-item:hover .cart-item-price,
+.cart-item:hover .cart-item-total {
+    color: #333 !important;
+}
+
+.cart-item:last-child {
+    border-bottom: none;
+}
+
+.cart-item-image {
+    width: 100px;
+    height: 80px;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #f8f9fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cart-item-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cart-item-details h3 {
+    color: var(--dark-color);
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.cart-item-category {
+    color: var(--text-color);
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+.cart-item-price {
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.cart-item-quantity {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--light-color);
+    padding: 8px 12px;
+    border-radius: 6px;
+}
+
+.quantity-btn {
+    background: none;
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition);
+    background: var(--white);
+    color: var(--dark-color);
+    border: 1px solid #ddd;
+}
+
+.quantity-btn:hover {
+    background: var(--primary-color);
+    color: var(--white);
+    border-color: var(--primary-color);
+}
+
+.quantity-display {
+    font-weight: 600;
+    min-width: 30px;
+    text-align: center;
+    color: var(--dark-color);
+}
+
+.cart-item-total {
+    font-weight: 700;
+    color: var(--primary-color);
+    font-size: 1.2rem;
+}
+
+.btn-remove {
+    background: none;
+    border: none;
+    color: #e74c3c;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 6px;
+    transition: var(--transition);
+    border: 1px solid #e74c3c;
+}
+
+.btn-remove:hover {
+    background: #e74c3c;
+    color: var(--white);
+}
+
+/* Cart Summary */
+.cart-summary {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 120px;
+    border: 1px solid #eee;
+}
+
+.cart-summary h3 {
+    color: var(--dark-color);
+    margin-bottom: 25px;
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+.summary-details {
+    margin-bottom: 25px;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+    color: var(--dark-color);
+}
+
+.summary-row:last-child {
+    border-bottom: none;
+}
+
+.total-row {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    
+    padding-top: 15px;
+    margin-top: 10px;
+}
+
+.discount-row {
+    color: #27ae60;
+}
+
+/* Promo Code */
+.promo-code {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.promo-code input {
+    flex: 1;
+    padding: 12px 15px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    color: var(--dark-color);
+}
+
+.promo-code input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+.btn-promo {
+    background: var(--secondary-color);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.btn-promo:hover {
+    background: #e67e22;
+}
+
+/* Checkout Actions */
+.checkout-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.btn-continue-shopping {
+    background: var(--light-color);
+    color: var(--dark-color);
+    border: 2px solid #ddd;
+}
+
+.btn-continue-shopping:hover {
+    background: #e9ecef;
+    border-color: #adb5bd;
+    color: var(--dark-color);
+}
+
+.security-notice {
+    text-align: center;
+    margin-top: 20px;
+    padding: 15px;
+    background: #e8f5e8;
+    border-radius: 6px;
+    color: #27ae60;
+    font-size: 0.9rem;
+}
+
+.security-notice i {
+    margin-right: 8px;
+}
+
+/* Empty Cart */
+.empty-cart {
+    text-align: center;
+    padding: 60px 40px;
+}
+
+.empty-cart-icon {
+    font-size: 4rem;
+    color: #bdc3c7;
+    margin-bottom: 20px;
+}
+
+.empty-cart h3 {
+    color: var(--dark-color);
+    margin-bottom: 15px;
+}
+
+.empty-cart p {
+    color: var(--text-color);
+    margin-bottom: 30px;
+}
+
+/* Animation for add to cart */
+.add-to-cart-animation {
+    pointer-events: none;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .cart-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .cart-summary {
+        position: static;
+    }
+}
+
+@media (max-width: 768px) {
+    .cart-item {
+        grid-template-columns: 80px 1fr;
+        gap: 15px;
+        position: relative;
+        padding: 20px;
+    }
+    
+    .cart-item-quantity,
+    .cart-item-total,
+    .cart-item-actions {
+        grid-column: 1 / -1;
+        justify-self: start;
+    }
+    
+    .cart-item-actions {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+    
+    .cart-item-quantity {
+        margin-top: 10px;
+    }
+    
+    .promo-code {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .cart-section {
+        padding: 80px 0;
+    }
+    
+    .cart-item {
+        padding: 15px;
+    }
+    
+    .cart-summary {
+        padding: 20px;
+    }
+}
+
+/* === Cart UI fixes (override) === */
+
+/* 1)  */
+.cart-item:hover {
+    /* background nhẹ, vẫn có lift hiệu ứng nhưng không đổi màu chữ */
+    
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+
+/* đảm bảo chữ luôn dễ đọc  */
+.cart-item .cart-item-details h3,
+.cart-item .cart-item-category,
+.cart-item .cart-item-price,
+.cart-item .cart-item-total {
+    /* màu chữ mặc định, d*/
+    color: white !important;
+}
+
+/* 2) Số lượng trên icon giỏ hàng thành màu cam */
+.cart-count {
+    background: #e67e22 !important;     /* nền trắng để nổi chữ cam */
+    color: #ffffff !important;          /* chữ màu cam */
+    border: none;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    width: 22px;
+    height: 22px;
+}
+
+/* 3) Màu chữ cho phần giảm giá (#cart-discount) thành đen */
+.cart-discount {
+    color:#333!important;
+    font-weight: 600;
+}
+
+
+#cart-total {
+    color: var(--primary-color) !important;
+}
+
+/* 5) Nếu có rule toàn cục làm chữ trắng trong .cart-summary (phòng trường hợp) */
+.cart-summary,
+.cart-summary * {
+    color: inherit !important;
+}
+
+
+.promo-code input {
+    background: #ffffff !important;
+    color: #111 !important;
+    border: 1px solid #dcdcdc !important;
+    box-shadow: none !important;
+}
+.security-notice {
+    background: #e8f5e8 !important;   
+    color: #0b5b2e !important;        /* xanh đậm / gần đen để đọc tốt */
+    border-left: 4px solid #27ae60 !important;
+    padding: 12px !important;
+    font-weight: 600;
+}
+.btn-continue-shopping:hover {
+        /* background nhẹ, vẫn có lift hiệu ứng nhưng không đổi màu chữ */
+    background: black  !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+

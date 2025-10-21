@@ -1,0 +1,441 @@
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    .container {
+        width: 95%;
+    }
+    
+    .hero h1 {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .about-container,
+    .contact-container {
+        flex-direction: column;
+        gap: 40px;
+    }
+    
+    .booking-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .section-title h2 {
+        font-size: 2rem;
+    }
+    
+    .team-members {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .region-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .menu-items {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .about-features {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-menu {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        background: var(--white);
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        box-shadow: var(--shadow);
+        transition: var(--transition);
+        z-index: 999;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-menu li {
+        margin: 15px 0;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .hero {
+        height: 70vh;
+        margin-top: 60px;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .hero p {
+        font-size: 1.1rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    
+    .hero-buttons .btn {
+        width: 100%;
+        max-width: 280px;
+    }
+    
+    .menu-items,
+    .offer-cards,
+    .footer-container,
+    .region-cards,
+    .category-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .team-members {
+        grid-template-columns: 1fr;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+    
+    .cart-item {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+        gap: 15px;
+    }
+    
+    .cart-item-image {
+        margin-bottom: 15px;
+    }
+    
+    .cart-item-quantity {
+        margin: 15px 0;
+    }
+    
+    .cart-item-total {
+        margin: 10px 0;
+        text-align: left;
+    }
+    
+    .checkout-actions {
+        flex-direction: column;
+    }
+    
+    .section-title h2 {
+        font-size: 1.8rem;
+    }
+    
+    .about-content h2 {
+        font-size: 2rem;
+    }
+    
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .branches-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .menu-categories {
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding-bottom: 10px;
+    }
+    
+    .category-btn {
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        width: 100%;
+        padding: 0 15px;
+    }
+    
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+    }
+    
+    .section-title h2 {
+        font-size: 1.6rem;
+    }
+    
+    .auth-tabs {
+        flex-direction: column;
+    }
+    
+    .auth-tab {
+        width: 100%;
+    }
+    
+    .social-login {
+        flex-direction: column;
+    }
+    
+    .promo-code {
+        flex-direction: column;
+    }
+    
+    .form-container,
+    .auth-container {
+        margin: 80px auto 40px;
+        padding: 20px;
+    }
+    
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .about-image img {
+        height: 300px;
+    }
+    
+    .feature {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+    
+    .info-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+    
+    .contact-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+    
+    .contact-icon {
+        align-self: center;
+    }
+}
+
+/* Additional responsive styles for cart */
+@media (max-width: 600px) {
+    .cart-item {
+        padding: 15px;
+    }
+    
+    .cart-item-details h3 {
+        font-size: 1rem;
+    }
+    
+    .cart-item-total {
+        margin: 10px 0;
+    }
+    
+    .cart-summary {
+        padding: 20px;
+    }
+}
+
+/* Auth responsive */
+@media (max-width: 768px) {
+    .auth-container {
+        margin: 80px auto;
+    }
+    
+    .auth-content {
+        padding: 20px;
+    }
+    
+    .auth-header {
+        padding: 30px 20px 15px;
+    }
+}
+
+/* Booking responsive */
+@media (max-width: 768px) {
+    .booking-container {
+        gap: 30px;
+    }
+    
+    .booking-info {
+        margin-top: 0;
+    }
+    
+    .booking-form {
+        padding: 30px 20px;
+    }
+}
+
+/* Team section responsive */
+@media (max-width: 768px) {
+    .team-member {
+        padding: 20px;
+    }
+    
+    .team-member img {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+/* Menu section responsive */
+@media (max-width: 768px) {
+    .menu-section {
+        padding: 80px 0;
+    }
+    
+    .menu-item h3 {
+        flex-direction: column;
+        gap: 8px;
+        align-items: flex-start;
+    }
+}
+
+/* Contact section responsive */
+@media (max-width: 768px) {
+    .contact-info,
+    .contact-form {
+        padding: 30px 20px;
+    }
+    
+    .branch-highlight {
+        padding: 20px;
+    }
+}
+
+/* Header responsive improvements */
+@media (max-width: 768px) {
+    .header-container {
+        padding: 12px 0;
+    }
+    
+    .logo {
+        font-size: 1.5rem;
+    }
+    
+    .nav-menu a {
+        font-size: 1.1rem;
+        padding: 12px 20px;
+        display: block;
+        text-align: center;
+    }
+    
+    .nav-menu a::after {
+        display: none;
+    }
+    
+    .nav-menu a.active {
+        background: var(--light-color);
+        border-radius: 4px;
+    }
+}
+
+/* Hero section mobile optimization */
+@media (max-width: 480px) {
+    .hero {
+        height: 60vh;
+        min-height: 400px;
+    }
+    
+    .hero-content {
+        padding: 0 10px;
+    }
+    
+    .hero-buttons .btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Improve touch targets for mobile */
+@media (max-width: 768px) {
+    .btn,
+    .category-btn,
+    .auth-tab,
+    .quantity-btn,
+    .remove-btn {
+        min-height: 44px;
+        min-width: 44px;
+    }
+    
+    .form-control {
+        font-size: 16px; /* Prevent zoom on iOS */
+    }
+    
+    .nav-menu a {
+        padding: 15px 20px;
+    }
+}
+
+/* Footer mobile improvements */
+@media (max-width: 768px) {
+    footer {
+        padding: 50px 0 0;
+    }
+    
+    .footer-container {
+        gap: 30px;
+    }
+    
+    .social-links {
+        justify-content: center;
+    }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --light-color: #2d2d2d;
+        --white: #1a1a1a;
+        --dark-color: #ffffff;
+        --text-color: #b3b3b3;
+    }
+    
+    body {
+        background: var(--white);
+        color: var(--text-color);
+    }
+}
+
+/* Print styles */
+@media print {
+    .header,
+    .footer,
+    .btn,
+    .hero-buttons,
+    .social-links {
+        display: none;
+    }
+    
+    body {
+        color: #000;
+        background: #fff;
+    }
+    
+    .container {
+        width: 100%;
+        max-width: none;
+    }
+}
+
