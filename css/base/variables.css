@@ -61,6 +61,22 @@
   --z-tooltip: 1060;
 }
 
+/* Xử lí màu sắc cho Dark theme */
 html {
   color-scheme: only dark;
+}
+
+:root {
+  --light-color: #2d2d2d;
+  --white: #1a1a1a;
+  --dark-color: #ffffff;
+  --text-color: #b3b3b3;
+  --card-bg: #2d2d2d;
+  --muted-border: #404040;
+  --border-color: #404040;
+}
+
+body {
+  background: var(--white);
+  color: var(--text-color);
 }
