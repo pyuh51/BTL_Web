@@ -1,11 +1,11 @@
-/* Modern Section Styles với Parallax Effects */
 .section {
   padding: var(--space-2xl) 0;
   position: relative;
 }
 
 .hero {
-  background: url("/images/about_main-background/main_background.jpg") center/cover no-repeat fixed;
+  background: url("/images/about_main-background/main_background.jpg")
+    center/cover no-repeat fixed;
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -81,7 +81,6 @@
   margin-top: var(--space-xl);
 }
 
-/* Scroll Hint */
 .scroll-hint {
   position: absolute;
   bottom: 2rem;
@@ -119,7 +118,6 @@
   }
 }
 
-/* Background Variants */
 .bg-light {
   background: var(--light-color);
 }
@@ -146,7 +144,6 @@
   color: rgba(255, 255, 255, 0.8);
 }
 
-/* Section Animations */
 .section-animate {
   animation: fadeInUp 0.8s ease-out;
 }
@@ -162,7 +159,6 @@
   }
 }
 
-/* Gradient Backgrounds */
 .bg-gradient-primary {
   background: var(--primary-gradient);
   color: var(--white);
@@ -173,7 +169,6 @@
   color: var(--white);
 }
 
-/* Pattern Overlays */
 .pattern-dots::before {
   content: "";
   position: absolute;

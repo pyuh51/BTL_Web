@@ -12,7 +12,6 @@
     />
   </head>
   <body>
-    <!-- Header -->
     <header>
       <div class="container header-container">
         <a
@@ -21,7 +20,7 @@
           aria-label="Hương Quê Việt - Trang chủ"
         >
           <img
-            src="/images/logo/logo1.png"
+            src="../images/logo/logo1.png"
             alt="Logo Hương Quê Việt"
             class="logo-img"
           />
@@ -51,7 +50,6 @@
       </div>
     </header>
 
-    <!-- Order History Section -->
     <section class="order-history-section" style="padding: 120px 0 80px">
       <div class="container">
         <div class="section-title">
@@ -87,7 +85,6 @@
       </div>
     </section>
 
-    <!-- Footer -->
     <footer>
       <div class="container">
         <div class="footer-container">
@@ -159,7 +156,7 @@
         const ordersList = document.getElementById("orders-list");
         const noOrders = document.getElementById("no-orders");
 
-        console.log("Orders found:", orders); // Debug log
+        console.log("Orders found:", orders);
 
         if (orders.length > 0) {
           noOrders.style.display = "none";

@@ -1,245 +1,235 @@
-
-/* Modern Header với Sticky Effect và Blur Background */
-
 header {
-    background: rgba(3, 8, 14, 0.755); 
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(50px);
-    box-shadow: var(--shadow-sm);
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: var(--z-fixed);
-    transition: all var(--transition);
-    border-bottom: 1px solid rgba(222, 226, 230, 0.5); /* Border xám nhẹ */
+  background: rgba(3, 8, 14, 0.755);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(50px);
+  box-shadow: var(--shadow-sm);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: var(--z-fixed);
+  transition: all var(--transition);
+  border-bottom: 1px solid rgba(222, 226, 230, 0.5);
 }
 
-/*header.scrolled {
-    background: rgba(248, 249, 250, 0.5); /* Màu xám đậm hơn khi scroll 
-    box-shadow: var(--shadow);
-    border-bottom-color: var(--muted-border);
-}
-*/
 .header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
 }
 
 .logo {
-    font-size: 1.8rem;
-    font-weight: 800;
-    color: var(--primary-color);
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    transition: all var(--transition);
-    
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all var(--transition);
 }
 
 .logo:hover {
-    transform: translateY(-1px);
+  transform: translateY(-1px);
 }
 
 .logo span {
-    color: var(--secondary-color);
+  color: var(--secondary-color);
 }
 
-
-/* Navigation Menu - Hiện đại */
 .nav-menu {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
 }
 
 .nav-menu li {
-    position: relative;
+  position: relative;
 }
 
 .nav-menu a {
-    font-weight: 600; /* Tăng độ đậm */
-    color: var(--dark-color);
-    transition: all var(--transition);
-    padding: 0.5rem 0;
-    position: relative;
+  font-weight: 600;
+  color: var(--dark-color);
+  transition: all var(--transition);
+  padding: 0.5rem 0;
+  position: relative;
 }
 
 .nav-menu a::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: var(--primary-gradient);
-    transition: width var(--transition);
-    border-radius: 2px;
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary-gradient);
+  transition: width var(--transition);
+  border-radius: 2px;
 }
 
 .nav-menu a:hover {
-    color: var(--primary-color);
+  color: var(--primary-color);
 }
 
 .nav-menu a:hover::after,
 .nav-menu a.active::after {
-    width: 100%;
+  width: 100%;
 }
 
 .nav-menu a.active {
-    color: var(--primary-color);
-    font-weight: 700; /* Làm nổi bật hơn */
+  color: var(--primary-color);
+  font-weight: 700;
 }
 
-/* Cart Icon với Animation */
 .cart-icon {
-    position: relative;
-    display: flex;
-    align-items: center;
-    transition: all var(--transition);
+  position: relative;
+  display: flex;
+  align-items: center;
+  transition: all var(--transition);
 }
 
 .cart-icon:hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .cart-count {
-    background: var(--secondary-gradient);
-    color: var(--white);
-    font-size: 0.7rem;
-    font-weight: 700;
-    padding: 0.25rem 0.5rem;
-    border-radius: 50%;
-    position: absolute;
-    top: -8px;
-    right: -8px;
-    min-width: 18px;
-    height: 18px;
-    text-align: center;
-    line-height: 1;
-    box-shadow: var(--shadow);
-    animation: bounce 2s infinite;
+  background: var(--secondary-gradient);
+  color: var(--white);
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.25rem 0.5rem;
+  border-radius: 50%;
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  min-width: 18px;
+  height: 18px;
+  text-align: center;
+  line-height: 1;
+  box-shadow: var(--shadow);
+  animation: bounce 2s infinite;
 }
 
 @keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
-        transform: translateY(0);
-    }
-    40% {
-        transform: translateY(-3px);
-    }
-    60% {
-        transform: translateY(-2px);
-    }
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-3px);
+  }
+  60% {
+    transform: translateY(-2px);
+  }
 }
 
-/* Mobile Menu Toggle */
 .menu-toggle {
-    display: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-    background: none;
-    border: none;
-    color: var(--dark-color);
-    transition: all var(--transition);
-    width: 2.5rem;
-    height: 2.5rem;
-    border-radius: var(--radius);
-    align-items: center;
-    justify-content: center;
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: var(--dark-color);
+  transition: all var(--transition);
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: var(--radius);
+  align-items: center;
+  justify-content: center;
 }
 
 .menu-toggle:hover {
-    background: var(--light-color);
-    color: var(--primary-color);
+  background: var(--light-color);
+  color: var(--primary-color);
 }
 
-/* Mobile Navigation */
 @media (max-width: 768px) {
-    .menu-toggle {
-        display: flex;
-    }
+  .menu-toggle {
+    display: flex;
+  }
 
-    .nav-menu {
-        position: fixed;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background: rgba(255, 255, 255, 0.98);
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
-        flex-direction: column;
-        padding: 2rem;
-        box-shadow: var(--shadow-lg);
-        transform: translateY(-100%);
-        opacity: 0;
-        visibility: hidden;
-        transition: all var(--transition-slow);
-        gap: 1rem;
-    }
+  .nav-menu {
+    position: fixed;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    flex-direction: column;
+    padding: 2rem;
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition-slow);
+    gap: 1rem;
+  }
 
-    .nav-menu.active {
-        transform: translateY(0);
-        opacity: 1;
-        visibility: visible;
-    }
+  .nav-menu.active {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
 
-    .nav-menu li {
-        width: 100%;
-        text-align: center;
-    }
+  .nav-menu li {
+    width: 100%;
+    text-align: center;
+  }
 
-    .nav-menu a {
-        display: block;
-        padding: 1rem;
-        border-radius: var(--radius);
-        transition: all var(--transition);
-    }
+  .nav-menu a {
+    display: block;
+    padding: 1rem;
+    border-radius: var(--radius);
+    transition: all var(--transition);
+  }
 
-    .nav-menu a:hover,
-    .nav-menu a.active {
-        background: var(--primary-color);
-        color: var(--white);
-    }
+  .nav-menu a:hover,
+  .nav-menu a.active {
+    background: var(--primary-color);
+    color: var(--white);
+  }
 
-    .nav-menu a::after {
-        display: none;
-    }
+  .nav-menu a::after {
+    display: none;
+  }
 }
 
-/* Header Scroll Effect */
 header.scrolled {
-    padding: 0.5rem 0;
+  padding: 0.5rem 0;
 }
 
 header.scrolled .header-container {
-    padding: 0.5rem 0;
+  padding: 0.5rem 0;
 }
 
-
-/* Giữ nguyên phong cách cũ, chỉ đảm bảo image + text hiển thị đúng */
 .logo {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;        /* khoảng cách nhẹ giữa ảnh và chữ */
-  color: inherit;     /* kế thừa màu hiện tại */
+  gap: 0.5rem;
+  color: inherit;
   text-decoration: none;
 }
 
-/* Ẩn pseudo-icon cũ nếu còn */
-.logo::before { display: none !important; }
+.logo::before {
+  display: none !important;
+}
 
-/* Ảnh logo tỉ lệ theo chữ (không phá layout cũ) */
+.logo-text {
+  color: var(--primary-color) !important;
+  font-weight: inherit;
+  font-size: inherit;
+}
 
+.logo-accent {
+  color: inherit;
+}
 
-/* Văn bản logo kế thừa màu  */
-.logo-text { color: var(--primary-color) !important; font-weight: inherit; font-size: inherit; }
-
-/* Nếu bạn muốn phần "Việt" có màu nhấn */
-.logo-accent { color: inherit;  }
-
-/* Responsive nhỏ */
 @media (max-width: 768px) {
-  .logo-img { width: 1em; height: 1em; }
+  .logo-img {
+    width: 1em;
+    height: 1em;
+  }
 }

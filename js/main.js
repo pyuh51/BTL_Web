@@ -1,94 +1,92 @@
-// Enhanced Main JavaScript với Error Handling và Performance Optimization
 class AppState {
-    constructor() {
-        this.cart = JSON.parse(localStorage.getItem('cart')) || [];
-        this.init();
-    }
+  constructor() {
+    this.cart = JSON.parse(localStorage.getItem("cart")) || [];
+    this.init();
+  }
 
-    init() {
-        this.setupEventListeners();
-        this.updateCartCount();
-        this.checkAuthStatus();
-        this.setupScrollEffects();
-    }
+  init() {
+    this.setupEventListeners();
+    this.updateCartCount();
+    this.checkAuthStatus();
+    this.setupScrollEffects();
+  }
 
-    setupEventListeners() {
-        // Mobile menu với better touch handling
-        const menuToggle = document.querySelector('.menu-toggle');
-        const navMenu = document.querySelector('.nav-menu');
+  setupEventListeners() {
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navMenu = document.querySelector(".nav-menu");
 
-        if (menuToggle) {
-            menuToggle.addEventListener('click', (e) => {
-                e.stopPropagation();
-                navMenu.classList.toggle('active');
-                menuToggle.classList.toggle('active');
-            });
+    if (menuToggle) {
+      menuToggle.addEventListener("click", (e) => {
+        e.stopPropagation();
+        navMenu.classList.toggle("active");
+        menuToggle.classList.toggle("active");
+      });
 
-            // Close menu khi click outside
-            document.addEventListener('click', (e) => {
-                if (!e.target.closest('.nav-menu') && !e.target.closest('.menu-toggle')) {
-                    navMenu.classList.remove('active');
-                    menuToggle.classList.remove('active');
-                }
-            });
-
-            // Prevent menu close khi click inside menu
-            navMenu.addEventListener('click', (e) => {
-                e.stopPropagation();
-            });
+      document.addEventListener("click", (e) => {
+        if (
+          !e.target.closest(".nav-menu") &&
+          !e.target.closest(".menu-toggle")
+        ) {
+          navMenu.classList.remove("active");
+          menuToggle.classList.remove("active");
         }
-
-        // Header scroll effect
-        window.addEventListener('scroll', this.throttle(this.handleScroll, 100));
+      });
+      navMenu.addEventListener("click", (e) => {
+        e.stopPropagation();
+      });
     }
 
-    handleScroll = () => {
-        const header = document.querySelector('header');
-        if (window.scrollY > 100) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
-        }
+    window.addEventListener("scroll", this.throttle(this.handleScroll, 100));
+  }
+
+  handleScroll = () => {
+    const header = document.querySelector("header");
+    if (window.scrollY > 100) {
+      header.classList.add("scrolled");
+    } else {
+      header.classList.remove("scrolled");
     }
+  };
 
-    throttle(func, limit) {
-        let inThrottle;
-        return function() {
-            const args = arguments;
-            const context = this;
-            if (!inThrottle) {
-                func.apply(context, args);
-                inThrottle = true;
-                setTimeout(() => inThrottle = false, limit);
-            }
-        }
+  throttle(func, limit) {
+    let inThrottle;
+    return function () {
+      const args = arguments;
+      const context = this;
+      if (!inThrottle) {
+        func.apply(context, args);
+        inThrottle = true;
+        setTimeout(() => (inThrottle = false), limit);
+      }
+    };
+  }
+
+  updateCartCount() {
+    try {
+      const totalItems = this.cart.reduce(
+        (total, item) => total + (item.quantity || 0),
+        0
+      );
+      document.querySelectorAll(".cart-count").forEach((element) => {
+        element.textContent = totalItems;
+        element.style.display = totalItems > 0 ? "flex" : "none";
+      });
+    } catch (error) {
+      console.error("Error updating cart count:", error);
     }
+  }
 
-    updateCartCount() {
-        try {
-            const totalItems = this.cart.reduce((total, item) => total + (item.quantity || 0), 0);
-            document.querySelectorAll('.cart-count').forEach(element => {
-                element.textContent = totalItems;
-                element.style.display = totalItems > 0 ? 'flex' : 'none';
-            });
-        } catch (error) {
-            console.error('Error updating cart count:', error);
-        }
-    }
+  checkAuthStatus() {
+    const loginButton = document.querySelector(".btn-login");
+    if (!loginButton) return;
 
-    checkAuthStatus() {
-        const loginButton = document.querySelector('.btn-login');
-        if (!loginButton) return;
+    const currentUser = JSON.parse(localStorage.getItem("currentUser"));
 
-        const currentUser = JSON.parse(localStorage.getItem('currentUser'));
-        
-        if (currentUser) {
-            // Tạo avatar từ chữ cái đầu
-            const firstName = currentUser.name.split(' ')[0];
-            const avatarLetter = firstName.charAt(0).toUpperCase();
-            
-            // Thay thế nút đăng nhập bằng user menu
-            const userMenuHTML = `
+    if (currentUser) {
+      const firstName = currentUser.name.split(" ")[0];
+      const avatarLetter = firstName.charAt(0).toUpperCase();
+
+      const userMenuHTML = `
                 <li class="user-menu">
                     <button class="user-icon">
                         <div class="user-avatar">${avatarLetter}</div>
@@ -121,94 +119,89 @@ class AppState {
                     </div>
                 </li>
             `;
-            
-            // Thay thế nút login bằng user menu
-            const loginLi = loginButton.closest('li');
-            if (loginLi) {
-                loginLi.outerHTML = userMenuHTML;
-                
-                // Thêm event listener cho dropdown và logout
-                this.setupUserMenu();
-            }
-        }
-    }
 
-    setupUserMenu() {
-    const userIcon = document.querySelector('.user-icon');
-    const dropdown = document.querySelector('.user-dropdown');
-    const logoutBtn = document.querySelector('.logout-btn');
-    
+      const loginLi = loginButton.closest("li");
+      if (loginLi) {
+        loginLi.outerHTML = userMenuHTML;
+
+        this.setupUserMenu();
+      }
+    }
+  }
+
+  setupUserMenu() {
+    const userIcon = document.querySelector(".user-icon");
+    const dropdown = document.querySelector(".user-dropdown");
+    const logoutBtn = document.querySelector(".logout-btn");
+
     if (userIcon && dropdown) {
-        userIcon.addEventListener('click', (e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            dropdown.classList.toggle('show');
-        });
-        
-        // Đóng dropdown khi click ra ngoài
-        document.addEventListener('click', (e) => {
-            if (!e.target.closest('.user-menu')) {
-                dropdown.classList.remove('show');
-            }
-        });
+      userIcon.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        dropdown.classList.toggle("show");
+      });
 
-        // Đóng dropdown khi press Escape
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
-                dropdown.classList.remove('show');
-            }
-        });
-    }
-    
-    // Xử lý các mục trong dropdown
-    const dropdownItems = document.querySelectorAll('.dropdown-item');
-    dropdownItems.forEach(item => {
-        // Bỏ qua nút logout (xử lý riêng)
-        if (item.classList.contains('logout-btn')) return;
-        
-        item.addEventListener('click', (e) => {
-            const href = item.getAttribute('href');
-            
-            // Kiểm tra nếu là profile hoặc booking-history thì hiển thị thông báo
-            if (href === 'profile.html' || href === 'booking-history.html') {
-                e.preventDefault();
-                dropdown.classList.remove('show');
-                this.showNotification('Tính năng đang được phát triển!', 'info');
-            }
-            // order-history.html sẽ được chuyển hướng bình thường
-            // Các trang khác cũng sẽ hoạt động bình thường
-        });
-    });
-    
-    if (logoutBtn) {
-        logoutBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            this.logout();
-        });
-    }
-}
-
-    logout() {
-        if (confirm('Bạn có chắc muốn đăng xuất?')) {
-            localStorage.removeItem('currentUser');
-            this.showNotification('Đã đăng xuất thành công!', 'success');
-            setTimeout(() => {
-                window.location.reload();
-            }, 1000);
+      document.addEventListener("click", (e) => {
+        if (!e.target.closest(".user-menu")) {
+          dropdown.classList.remove("show");
         }
+      });
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+          dropdown.classList.remove("show");
+        }
+      });
     }
 
-    showNotification(message, type = 'success') {
-        // Remove existing notifications
-        document.querySelectorAll('.notification').forEach(notif => notif.remove());
+    const dropdownItems = document.querySelectorAll(".dropdown-item");
+    dropdownItems.forEach((item) => {
+      if (item.classList.contains("logout-btn")) return;
 
-        const notification = document.createElement('div');
-        notification.className = `notification ${type}`;
-        const icon = type === 'success' ? 'check-circle' : 
-                    type === 'error' ? 'exclamation-circle' : 
-                    'info-circle';
+      item.addEventListener("click", (e) => {
+        const href = item.getAttribute("href");
 
-        notification.innerHTML = `
+        if (href === "profile.html" || href === "booking-history.html") {
+          e.preventDefault();
+          dropdown.classList.remove("show");
+          this.showNotification("Tính năng đang được phát triển!", "info");
+        }
+      });
+    });
+
+    if (logoutBtn) {
+      logoutBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        this.logout();
+      });
+    }
+  }
+
+  logout() {
+    if (confirm("Bạn có chắc muốn đăng xuất?")) {
+      localStorage.removeItem("currentUser");
+      this.showNotification("Đã đăng xuất thành công!", "success");
+      setTimeout(() => {
+        window.location.reload();
+      }, 1000);
+    }
+  }
+
+  showNotification(message, type = "success") {
+    document
+      .querySelectorAll(".notification")
+      .forEach((notif) => notif.remove());
+
+    const notification = document.createElement("div");
+    notification.className = `notification ${type}`;
+    const icon =
+      type === "success"
+        ? "check-circle"
+        : type === "error"
+        ? "exclamation-circle"
+        : "info-circle";
+
+    notification.innerHTML = `
             <div class="notification-content">
                 <i class="fas fa-${icon}"></i>
                 <span>${message}</span>
@@ -218,76 +211,69 @@ class AppState {
             </button>
         `;
 
-        document.body.appendChild(notification);
+    document.body.appendChild(notification);
 
-        // Close button
-        const closeBtn = notification.querySelector('.notification-close');
-        closeBtn.addEventListener('click', () => {
-            notification.remove();
+    const closeBtn = notification.querySelector(".notification-close");
+    closeBtn.addEventListener("click", () => {
+      notification.remove();
+    });
+
+    setTimeout(() => {
+      if (notification.parentElement) {
+        notification.remove();
+      }
+    }, 5000);
+  }
+
+  setupScrollEffects() {
+    document.addEventListener("DOMContentLoaded", () => {
+      if (typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined") {
+        gsap.registerPlugin(ScrollTrigger);
+
+        gsap.utils.toArray(".region-card").forEach((el, i) => {
+          gsap.to(el, {
+            y: 0,
+            duration: 0.8,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: el,
+              start: "top 85%",
+              toggleActions: "play none none none",
+            },
+          });
         });
 
-        // Auto remove after 5 seconds
-        setTimeout(() => {
-            if (notification.parentElement) {
-                notification.remove();
-            }
-        }, 5000);
-    }
-
-    setupScrollEffects() {
-        // GSAP animations nếu có
-        document.addEventListener("DOMContentLoaded", () => {
-            if (typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined") {
-                gsap.registerPlugin(ScrollTrigger);
-
-                // hiệu ứng hiện dần khi cuộn
-                gsap.utils.toArray(".region-card").forEach((el, i) => {
-                    gsap.to(el, {
-                        y: 0,
-                        duration: 0.8,
-                        ease: "power3.out",
-                        scrollTrigger: {
-                            trigger: el,
-                            start: "top 85%",
-                            toggleActions: "play none none none"
-                        }
-                    });
-                });
-
-                // lazy load background
-                document.querySelectorAll(".region-card").forEach(card => {
-                    const reveal = card.querySelector(".region-reveal");
-                    const bg = card.dataset.bg;
-                    card.addEventListener("mouseenter", () => {
-                        reveal.style.backgroundImage = `url('${bg}')`;
-                    });
-                });
-            }
+        document.querySelectorAll(".region-card").forEach((card) => {
+          const reveal = card.querySelector(".region-reveal");
+          const bg = card.dataset.bg;
+          card.addEventListener("mouseenter", () => {
+            reveal.style.backgroundImage = `url('${bg}')`;
+          });
         });
-    }
+      }
+    });
+  }
 }
 
-// Utility functions
 const utils = {
-    formatCurrency: (amount) => {
-        return new Intl.NumberFormat('vi-VN', {
-            style: 'currency',
-            currency: 'VND'
-        }).format(amount);
-    },
+  formatCurrency: (amount) => {
+    return new Intl.NumberFormat("vi-VN", {
+      style: "currency",
+      currency: "VND",
+    }).format(amount);
+  },
 
-    debounce: (func, wait) => {
-        let timeout;
-        return function executedFunction(...args) {
-            const later = () => {
-                clearTimeout(timeout);
-                func(...args);
-            };
-            clearTimeout(timeout);
-            timeout = setTimeout(later, wait);
-        };
-    }
+  debounce: (func, wait) => {
+    let timeout;
+    return function executedFunction(...args) {
+      const later = () => {
+        clearTimeout(timeout);
+        func(...args);
+      };
+      clearTimeout(timeout);
+      timeout = setTimeout(later, wait);
+    };
+  },
 };
 
-// Khởi tạo app
 const appState = new AppState();

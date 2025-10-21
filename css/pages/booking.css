@@ -1,134 +1,122 @@
-
-/* Booking Page Specific Styles */
 .booking-section {
-    padding: 100px 0;
-    background: var(--white);
+  padding: 100px 0;
+  background: var(--white);
 }
 
 .booking-form {
-    background: var(--white);
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: var(--shadow);
-    border: 1px solid #eee;
+  background: var(--white);
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  border: 1px solid #eee;
 }
 
 .booking-info {
-    background: var(--light-color);
-    padding: 30px;
-    border-radius: 10px;
+  background: var(--light-color);
+  padding: 30px;
+  border-radius: 10px;
 }
 
 .info-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 15px;
-    margin-bottom: 25px;
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  margin-bottom: 25px;
 }
 
 .info-item i {
-    color: var(--primary-color);
-    font-size: 1.5rem;
-    margin-top: 5px;
-    flex-shrink: 0;
+  color: var(--primary-color);
+  font-size: 1.5rem;
+  margin-top: 5px;
+  flex-shrink: 0;
 }
 
 .info-item h4 {
-    margin-bottom: 5px;
-    color: var(--dark-color);
-    font-size: 1.1rem;
+  margin-bottom: 5px;
+  color: var(--dark-color);
+  font-size: 1.1rem;
 }
 
 .info-item p {
-    color: var(--text-color);
-    font-size: 0.95rem;
-    line-height: 1.5;
+  color: var(--text-color);
+  font-size: 0.95rem;
+  line-height: 1.5;
 }
 
-
-
-/* Fix cho date input */
 .booking-form input[type="date"] {
-    position: relative;
+  position: relative;
 }
 
 .booking-form input[type="date"]::-webkit-calendar-picker-indicator {
-    filter: invert(0.5);
-    cursor: pointer;
+  filter: invert(0.5);
+  cursor: pointer;
 }
 
 .booking-form input[type="time"] {
-    position: relative;
+  position: relative;
 }
 
 .booking-form input[type="time"]::-webkit-calendar-picker-indicator {
-    filter: invert(0.5);
-    cursor: pointer;
+  filter: invert(0.5);
+  cursor: pointer;
 }
 
-/* Focus states */
 .booking-form select.form-control:focus,
 .booking-form input.form-control:focus {
-    border-color: var(--primary-color);
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(26, 127, 92, 0.1);
+  border-color: var(--primary-color);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(26, 127, 92, 0.1);
 }
 
-/* Hover states */
 .booking-form select.form-control:hover,
 .booking-form input.form-control:hover {
-    border-color: var(--primary-light);
+  border-color: var(--primary-light);
 }
 
-/* Enhanced select styling */
 .booking-form select.form-control {
-    cursor: pointer;
-    transition: all var(--transition);
+  cursor: pointer;
+  transition: all var(--transition);
 }
 
 .booking-form select.form-control option {
-    background: var(--white);
-    color: var(--text-color);
-    padding: 12px;
+  background: var(--white);
+  color: var(--text-color);
+  padding: 12px;
 }
 
-/* Date input improvements */
 .booking-form input[type="date"] {
-    min-height: 48px;
+  min-height: 48px;
 }
 
-/* Time input improvements */
 .booking-form input[type="time"] {
-    min-height: 48px;
+  min-height: 48px;
 }
 
-/* Optgroup styling */
 .booking-form select optgroup {
-    background: var(--light-color);
-    color: var(--primary-color);
-    font-weight: 600;
-    font-size: 0.9rem;
+  background: var(--light-color);
+  color: var(--primary-color);
+  font-weight: 600;
+  font-size: 0.9rem;
 }
 
 .booking-form select option {
-    padding: 8px 12px;
-    border-bottom: 1px solid var(--muted-border);
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--muted-border);
 }
 
-/* Đổi màu chữ form đặt bàn */
 .booking-form .form-control {
-    color: #fff;
+  color: #fff;
 }
 
 .booking-form .form-control::placeholder {
-    color: #ccc;
+  color: #ccc;
 }
 
 .booking-form .form-control option {
-    color: #333;
-    background: white;
+  color: #333;
+  background: white;
 }
 
 .booking-form select.form-control {
-    color: #fff;
+  color: #fff;
 }

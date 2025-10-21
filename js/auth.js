@@ -1,4 +1,3 @@
-// Enhanced Authentication System
 class AuthSystem {
   constructor() {
     this.currentTab = "login";
@@ -11,7 +10,6 @@ class AuthSystem {
     this.setupSocialLogin();
     this.setupPasswordVisibility();
 
-    // Đồng bộ trạng thái tab UI với biến currentTab
     this.switchTab(this.currentTab);
   }
 
@@ -27,12 +25,10 @@ class AuthSystem {
   }
 
   switchTab(tabName) {
-    // Update tabs
     document.querySelectorAll(".auth-tab").forEach((tab) => {
       tab.classList.toggle("active", tab.dataset.tab === tabName);
     });
 
-    // Update content
     document.querySelectorAll(".auth-form").forEach((form) => {
       form.classList.toggle("active", form.id === `${tabName}-tab`);
     });
@@ -46,13 +42,11 @@ class AuthSystem {
 
     if (loginForm) {
       loginForm.addEventListener("submit", (e) => this.handleLogin(e));
-      // realtime validation on login form if desired
       this.setupRealTimeValidation(loginForm);
     }
 
     if (registerForm) {
       registerForm.addEventListener("submit", (e) => this.handleRegister(e));
-      // Real-time validation
       this.setupRealTimeValidation(registerForm);
     }
   }
@@ -66,7 +60,6 @@ class AuthSystem {
   }
 
   setupPasswordVisibility() {
-    // Thêm toggle cho tất cả các input password trong trang (chỉ 1 lần mỗi input)
     const passwordFields = document.querySelectorAll('input[type="password"]');
     passwordFields.forEach((input) => this.addPasswordToggle(input));
   }
@@ -74,24 +67,20 @@ class AuthSystem {
   addPasswordToggle(passwordField) {
     if (!passwordField) return;
 
-    // tránh thêm nhiều lần
     const formGroup =
       passwordField.closest(".form-group") || passwordField.parentNode;
     if (!formGroup) return;
 
-    if (formGroup.querySelector(".password-toggle")) return; // đã có
+    if (formGroup.querySelector(".password-toggle")) return;
 
-    // Tạo nút toggle
     const toggleBtn = document.createElement("button");
     toggleBtn.type = "button";
     toggleBtn.className = "password-toggle";
     toggleBtn.setAttribute("aria-label", "Toggle password visibility");
     toggleBtn.innerHTML = '<i class="fas fa-eye"></i>';
 
-    // Thêm vào sau input (nếu muốn khác có thể thay đổi)
     formGroup.appendChild(toggleBtn);
 
-    // Xử lý toggle
     toggleBtn.addEventListener("click", (ev) => {
       ev.preventDefault();
       const type =
@@ -144,7 +133,6 @@ class AuthSystem {
     errorElement.className = "field-error";
     errorElement.textContent = message;
 
-    // đặt lỗi ngay phía sau input để dễ CSS
     if (field.nextSibling) {
       field.parentNode.insertBefore(errorElement, field.nextSibling);
     } else {
@@ -179,7 +167,6 @@ class AuthSystem {
       return;
     }
 
-    // Show loading state
     const submitBtn = e.target.querySelector('button[type="submit"]');
     const originalText = submitBtn ? submitBtn.innerHTML : "";
     if (submitBtn) {
@@ -189,10 +176,8 @@ class AuthSystem {
     }
 
     try {
-      // Simulate API call
       await new Promise((resolve) => setTimeout(resolve, 800));
 
-      // Kiểm tra đăng nhập
       const loginResult = this.loginUser(email, password);
 
       if (loginResult.success) {
@@ -223,15 +208,12 @@ class AuthSystem {
       confirmPassword: formData.get("confirm-password") || "",
     };
 
-    // Validation
     if (!this.validateRegisterData(userData)) {
       return;
     }
 
-    // Remove confirmPassword before saving
     const { confirmPassword, ...userToSave } = userData;
 
-    // Show loading state
     const submitBtn = e.target.querySelector('button[type="submit"]');
     const originalText = submitBtn ? submitBtn.innerHTML : "";
     if (submitBtn) {
@@ -285,9 +267,6 @@ class AuthSystem {
       return false;
     }
 
-    // @note confirmPassword already trimmed/checked earlier in caller
-    // here we assume caller removed confirmPassword; if not, we can't compare
-
     return true;
   }
 
@@ -301,14 +280,11 @@ class AuthSystem {
   isValidPhone(phone) {
     if (!phone) return false;
     const value = phone.trim();
-    // Regex cho số điện thoại VN (bắt đầu bằng 0 hoặc +84/84), tiếp theo 3/5/7/8/9 và 8 chữ số
-    // Ví dụ: 0912345678 hoặc +84912345678 hoặc 84912345678
     const phoneRegex = /^(?:\+?84|0)(?:3|5|7|8|9)\d{8}$/;
     return phoneRegex.test(value);
   }
 
   registerUser(userData) {
-    // Warning: demo only — storing plaintext passwords in localStorage is NOT secure for production.
     let users = JSON.parse(localStorage.getItem("users")) || [];
 
     if (users.find((user) => user.email === userData.email)) {
@@ -355,7 +331,6 @@ class AuthSystem {
       "success"
     );
 
-    // Kiểm tra nếu có redirect URL từ booking page
     const urlParams = new URLSearchParams(window.location.search);
     const redirect = urlParams.get("redirect");
 
@@ -369,7 +344,6 @@ class AuthSystem {
   }
 
   handleRegisterSuccess(userData) {
-    // Tự động đăng nhập sau khi đăng ký
     const loginResult = this.loginUser(userData.email, userData.password);
     if (loginResult.success) {
       this.showNotification(
@@ -384,7 +358,6 @@ class AuthSystem {
   }
 
   showNotification(message, type = "success") {
-    // Tạo notification element
     const notification = document.createElement("div");
     notification.className = `notification ${type}`;
     const icon =
@@ -406,7 +379,6 @@ class AuthSystem {
 
     document.body.appendChild(notification);
 
-    // Auto remove after 5 seconds
     const removeFn = () => {
       if (notification.parentElement) {
         notification.remove();
@@ -414,7 +386,6 @@ class AuthSystem {
     };
     const timeoutId = setTimeout(removeFn, 5000);
 
-    // Close button
     const closeBtn = notification.querySelector(".notification-close");
     closeBtn.addEventListener("click", () => {
       clearTimeout(timeoutId);
@@ -423,7 +394,6 @@ class AuthSystem {
   }
 
   setupSocialLogin() {
-    // Google Login
     const googleBtn = document.querySelector(".btn-google");
     if (googleBtn) {
       googleBtn.addEventListener("click", () => {
@@ -434,7 +404,6 @@ class AuthSystem {
       });
     }
 
-    // Facebook Login
     const facebookBtn = document.querySelector(".btn-facebook");
     if (facebookBtn) {
       facebookBtn.addEventListener("click", () => {
@@ -447,11 +416,9 @@ class AuthSystem {
   }
 }
 
-// Khởi tạo hệ thống auth
 document.addEventListener("DOMContentLoaded", () => {
   new AuthSystem();
 });
-// Password toggle functionality
 document.addEventListener("DOMContentLoaded", function () {
   const passwordToggles = document.querySelectorAll(".password-toggle");
 
