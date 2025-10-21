@@ -1,189 +1,232 @@
 <!DOCTYPE html>
 <html lang="vi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lịch sử đơn hàng - Hương Quê Việt</title>
-    <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="../css/responsive.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
-<body>
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/responsive.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
     <!-- Header -->
     <header>
-        <div class="container header-container">
-            <a href="index.html" class="logo" aria-label="Hương Quê Việt - Trang chủ">
-                <img src="/images/logo/logo1.png" alt="Logo Hương Quê Việt" class="logo-img">
-                <span class="logo-text">Hương Quê <span class="logo-accent">Việt</span></span>
-            </a>
+      <div class="container header-container">
+        <a
+          href="../index.html"
+          class="logo"
+          aria-label="Hương Quê Việt - Trang chủ"
+        >
+          <img
+            src="/images/logo/logo1.png"
+            alt="Logo Hương Quê Việt"
+            class="logo-img"
+          />
+          <span class="logo-text"
+            >Hương Quê <span class="logo-accent">Việt</span></span
+          >
+        </a>
 
-            <div class="menu-toggle">
-                <i class="fas fa-bars"></i>
-            </div>
-            
-            <ul class="nav-menu">
-                <li><a href="index.html">Trang chủ</a></li>
-                <li><a href="about.html">Giới thiệu</a></li>
-                <li><a href="menu.html">Thực đơn</a></li>
-                <li><a href="booking.html">Đặt bàn</a></li>
-                <li><a href="contact.html">Liên hệ</a></li>
-                <li><a href="cart.html" class="cart-icon"><i class="fas fa-shopping-cart"></i> <span class="cart-count">0</span></a></li>
-                <!-- User menu sẽ được thay bằng JS -->
-            </ul>
+        <div class="menu-toggle">
+          <i class="fas fa-bars"></i>
         </div>
+
+        <ul class="nav-menu">
+          <li><a href="../index.html">Trang chủ</a></li>
+          <li><a href="about.html">Giới thiệu</a></li>
+          <li><a href="menu.html">Thực đơn</a></li>
+          <li><a href="booking.html">Đặt bàn</a></li>
+          <li><a href="contact.html">Liên hệ</a></li>
+          <li>
+            <a href="cart.html" class="cart-icon"
+              ><i class="fas fa-shopping-cart"></i>
+              <span class="cart-count">0</span></a
+            >
+          </li>
+          <!-- User menu sẽ được thay bằng JS -->
+        </ul>
+      </div>
     </header>
 
     <!-- Order History Section -->
-    <section class="order-history-section" style="padding: 120px 0 80px;">
-        <div class="container">
-            <div class="section-title">
-                <h2>Lịch sử đơn hàng</h2>
-                <p>Theo dõi các đơn hàng bạn đã đặt tại Hương Quê Việt</p>
-            </div>
-
-            <div class="order-history-container">
-                <!-- Order sẽ được load bằng JavaScript -->
-                <div class="no-orders" id="no-orders">
-                    <i class="fas fa-receipt" style="font-size: 3rem; color: var(--text-muted); margin-bottom: 1rem;"></i>
-                    <h3>Chưa có đơn hàng nào</h3>
-                    <p>Hãy thưởng thức món ngon tại Hương Quê Việt và quay lại xem lịch sử đơn hàng của bạn!</p>
-                    <a href="menu.html" class="btn" style="margin-top: 1rem;">Đặt món ngay</a>
-                </div>
-
-                <div class="orders-list" id="orders-list" style="display: none;">
-                    <!-- Orders sẽ được thêm bằng JS -->
-                </div>
-            </div>
+    <section class="order-history-section" style="padding: 120px 0 80px">
+      <div class="container">
+        <div class="section-title">
+          <h2>Lịch sử đơn hàng</h2>
+          <p>Theo dõi các đơn hàng bạn đã đặt tại Hương Quê Việt</p>
         </div>
+
+        <div class="order-history-container">
+          <!-- Order sẽ được load bằng JavaScript -->
+          <div class="no-orders" id="no-orders">
+            <i
+              class="fas fa-receipt"
+              style="
+                font-size: 3rem;
+                color: var(--text-muted);
+                margin-bottom: 1rem;
+              "
+            ></i>
+            <h3>Chưa có đơn hàng nào</h3>
+            <p>
+              Hãy thưởng thức món ngon tại Hương Quê Việt và quay lại xem lịch
+              sử đơn hàng của bạn!
+            </p>
+            <a href="menu.html" class="btn" style="margin-top: 1rem"
+              >Đặt món ngay</a
+            >
+          </div>
+
+          <div class="orders-list" id="orders-list" style="display: none">
+            <!-- Orders sẽ được thêm bằng JS -->
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <div class="container">
-            <div class="footer-container">
-                <div class="footer-col">
-                    <h3>Hương Quê Việt</h3>
-                    <p>Mang hồn quê vào từng món ăn - Trải nghiệm ẩm thực ba miền Bắc, Trung, Nam tại 15 chi nhánh trên toàn quốc.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-tiktok"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
-                
-                <div class="footer-col">
-                    <h3>Liên kết nhanh</h3>
-                    <ul class="footer-links">
-                        <li><a href="index.html">Trang chủ</a></li>
-                        <li><a href="about.html">Về chúng tôi</a></li>
-                        <li><a href="menu.html">Thực đơn</a></li>
-                        <li><a href="booking.html">Đặt bàn</a></li>
-                        <li><a href="contact.html">Liên hệ</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-col">
-                    <h3>Chi nhánh chính</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Hà Nội: 3 chi nhánh</a></li>
-                        <li><a href="#">TP.HCM: 4 chi nhánh</a></li>
-                        <li><a href="#">Đà Nẵng: 2 chi nhánh</a></li>
-                        <li><a href="#">Huế: 1 chi nhánh</a></li>
-                        <li><a href="#">Cần Thơ: 1 chi nhánh</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-col">
-                    <h3>Liên hệ</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> Trụ sở: 123 Đường Ẩm Thực, Q.1, TP.HCM</p>
-                    <p><i class="fas fa-phone"></i> 1900 1234</p>
-                    <p><i class="fas fa-envelope"></i> info@huongqueviet.com</p>
-                    <p><i class="fas fa-clock"></i> Mở cửa: 9:00 - 22:00 hàng ngày</p>
-                </div>
+      <div class="container">
+        <div class="footer-container">
+          <div class="footer-col">
+            <h3>Hương Quê Việt</h3>
+            <p>
+              Mang hồn quê vào từng món ăn - Trải nghiệm ẩm thực ba miền Bắc,
+              Trung, Nam tại 15 chi nhánh trên toàn quốc.
+            </p>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-tiktok"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
             </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2024 Hương Quê Việt. Giữ gìn tinh hoa ẩm thực Việt.</p>
-            </div>
+          </div>
+
+          <div class="footer-col">
+            <h3>Liên kết nhanh</h3>
+            <ul class="footer-links">
+              <li><a href="../index.html">Trang chủ</a></li>
+              <li><a href="about.html">Về chúng tôi</a></li>
+              <li><a href="menu.html">Thực đơn</a></li>
+              <li><a href="booking.html">Đặt bàn</a></li>
+              <li><a href="contact.html">Liên hệ</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h3>Chi nhánh chính</h3>
+            <ul class="footer-links">
+              <li><a href="#">Hà Nội: 3 chi nhánh</a></li>
+              <li><a href="#">TP.HCM: 4 chi nhánh</a></li>
+              <li><a href="#">Đà Nẵng: 2 chi nhánh</a></li>
+              <li><a href="#">Huế: 1 chi nhánh</a></li>
+              <li><a href="#">Cần Thơ: 1 chi nhánh</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h3>Liên hệ</h3>
+            <p>
+              <i class="fas fa-map-marker-alt"></i> Trụ sở: 123 Đường Ẩm Thực,
+              Q.1, TP.HCM
+            </p>
+            <p><i class="fas fa-phone"></i> 1900 1234</p>
+            <p><i class="fas fa-envelope"></i> info@huongqueviet.com</p>
+            <p><i class="fas fa-clock"></i> Mở cửa: 9:00 - 22:00 hàng ngày</p>
+          </div>
         </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2024 Hương Quê Việt. Giữ gìn tinh hoa ẩm thực Việt.</p>
+        </div>
+      </div>
     </footer>
 
     <script src="../js/main.js"></script>
     <script src="../js/main.js"></script>
-<script>
-    // Order History functionality
-    document.addEventListener('DOMContentLoaded', function() {
+    <script>
+      // Order History functionality
+      document.addEventListener("DOMContentLoaded", function () {
         loadOrderHistory();
-    });
+      });
 
-    function loadOrderHistory() {
+      function loadOrderHistory() {
         // Lấy dữ liệu từ localStorage - sửa thành 'userOrders'
-        const orders = JSON.parse(localStorage.getItem('userOrders')) || [];
-        const ordersList = document.getElementById('orders-list');
-        const noOrders = document.getElementById('no-orders');
+        const orders = JSON.parse(localStorage.getItem("userOrders")) || [];
+        const ordersList = document.getElementById("orders-list");
+        const noOrders = document.getElementById("no-orders");
 
-        console.log('Orders found:', orders); // Debug log
+        console.log("Orders found:", orders); // Debug log
 
         if (orders.length > 0) {
-            noOrders.style.display = 'none';
-            ordersList.style.display = 'block';
-            ordersList.innerHTML = ''; // Clear existing content
-            
-            // Hiển thị orders theo thứ tự mới nhất trước
-            orders.forEach(order => {
-                const orderElement = createOrderCard(order);
-                ordersList.appendChild(orderElement);
-            });
-        } else {
-            noOrders.style.display = 'block';
-            ordersList.style.display = 'none';
-        }
-    }
+          noOrders.style.display = "none";
+          ordersList.style.display = "block";
+          ordersList.innerHTML = ""; // Clear existing content
 
-    function createOrderCard(order) {
-        const orderElement = document.createElement('div');
-        orderElement.className = 'order-card';
-        
+          // Hiển thị orders theo thứ tự mới nhất trước
+          orders.forEach((order) => {
+            const orderElement = createOrderCard(order);
+            ordersList.appendChild(orderElement);
+          });
+        } else {
+          noOrders.style.display = "block";
+          ordersList.style.display = "none";
+        }
+      }
+
+      function createOrderCard(order) {
+        const orderElement = document.createElement("div");
+        orderElement.className = "order-card";
+
         // Format date từ ISO string
         let date, time;
         if (order.createdAt) {
-            const dateObj = new Date(order.createdAt);
-            date = dateObj.toLocaleDateString('vi-VN');
-            time = dateObj.toLocaleTimeString('vi-VN', { hour: '2-digit', minute: '2-digit' });
+          const dateObj = new Date(order.createdAt);
+          date = dateObj.toLocaleDateString("vi-VN");
+          time = dateObj.toLocaleTimeString("vi-VN", {
+            hour: "2-digit",
+            minute: "2-digit",
+          });
         } else {
-            date = order.date || 'N/A';
-            time = order.time || '';
+          date = order.date || "N/A";
+          time = order.time || "";
         }
-        
+
         // Xử lý status
         let statusText, statusClass;
-        if (order.status === 'completed') {
-            statusText = 'Đã hoàn thành';
-            statusClass = 'status-completed';
-        } else if (order.status === 'pending') {
-            statusText = 'Đang xử lý';
-            statusClass = 'status-pending';
-        } else if (order.status === 'cancelled') {
-            statusText = 'Đã hủy';
-            statusClass = 'status-cancelled';
+        if (order.status === "completed") {
+          statusText = "Đã hoàn thành";
+          statusClass = "status-completed";
+        } else if (order.status === "pending") {
+          statusText = "Đang xử lý";
+          statusClass = "status-pending";
+        } else if (order.status === "cancelled") {
+          statusText = "Đã hủy";
+          statusClass = "status-cancelled";
         } else {
-            statusText = order.status || 'Đang xử lý';
-            statusClass = 'status-pending';
+          statusText = order.status || "Đang xử lý";
+          statusClass = "status-pending";
         }
-        
+
         // Xử lý payment method
-        const paymentMethod = order.paymentMethod === 'credit_card' ? 'Thẻ tín dụng' : 
-                             order.paymentMethod || 'Chưa xác định';
+        const paymentMethod =
+          order.paymentMethod === "credit_card"
+            ? "Thẻ tín dụng"
+            : order.paymentMethod || "Chưa xác định";
 
         orderElement.innerHTML = `
             <div class="order-header">
                 <div>
-                    <h4>Đơn hàng #${order.orderNumber || order.id || 'N/A'}</h4>
+                    <h4>Đơn hàng #${order.orderNumber || order.id || "N/A"}</h4>
                     <p class="order-date">${date} • ${time}</p>
                 </div>
                 <div class="order-meta">
-                    <span class="order-total">${formatCurrency(order.total || 0)}</span>
+                    <span class="order-total">${formatCurrency(
+                      order.total || 0
+                    )}</span>
                     <span class="order-status ${statusClass}">
                         <i class="fas ${getStatusIcon(statusText)}"></i>
                         ${statusText}
@@ -191,55 +234,73 @@
                 </div>
             </div>
             <div class="order-items">
-                ${(order.items || []).map(item => `
+                ${(order.items || [])
+                  .map(
+                    (item) => `
                     <div class="order-item">
                         <div class="item-info">
-                            <span class="item-name">${item.name || 'Sản phẩm'}</span>
-                            <span class="item-quantity">x${item.quantity || 1}</span>
+                            <span class="item-name">${
+                              item.name || "Sản phẩm"
+                            }</span>
+                            <span class="item-quantity">x${
+                              item.quantity || 1
+                            }</span>
                         </div>
-                        <span class="item-price">${formatCurrency((item.price || 0) * (item.quantity || 1))}</span>
+                        <span class="item-price">${formatCurrency(
+                          (item.price || 0) * (item.quantity || 1)
+                        )}</span>
                     </div>
-                `).join('')}
+                `
+                  )
+                  .join("")}
             </div>
             <div class="order-user-info">
-                <strong>Khách hàng:</strong> ${order.user ? order.user.name : 'N/A'} | 
-                <strong>Email:</strong> ${order.user ? order.user.email : 'N/A'} |
+                <strong>Khách hàng:</strong> ${
+                  order.user ? order.user.name : "N/A"
+                } | 
+                <strong>Email:</strong> ${
+                  order.user ? order.user.email : "N/A"
+                } |
                 <strong>Phương thức:</strong> ${paymentMethod}
             </div>
-            ${order.note ? `<div class="order-note"><strong>Ghi chú:</strong> ${order.note}</div>` : ''}
+            ${
+              order.note
+                ? `<div class="order-note"><strong>Ghi chú:</strong> ${order.note}</div>`
+                : ""
+            }
         `;
-        
+
         return orderElement;
-    }
+      }
 
-    function getStatusClass(status) {
+      function getStatusClass(status) {
         const statusLower = String(status).toLowerCase();
-        if (statusLower.includes('hoàn thành') || statusLower === 'completed') {
-            return 'status-completed';
-        } else if (statusLower.includes('hủy') || statusLower === 'cancelled') {
-            return 'status-cancelled';
+        if (statusLower.includes("hoàn thành") || statusLower === "completed") {
+          return "status-completed";
+        } else if (statusLower.includes("hủy") || statusLower === "cancelled") {
+          return "status-cancelled";
         } else {
-            return 'status-pending';
+          return "status-pending";
         }
-    }
+      }
 
-    function getStatusIcon(status) {
+      function getStatusIcon(status) {
         const statusLower = String(status).toLowerCase();
-        if (statusLower.includes('hoàn thành') || statusLower === 'completed') {
-            return 'fa-check-circle';
-        } else if (statusLower.includes('hủy') || statusLower === 'cancelled') {
-            return 'fa-times-circle';
+        if (statusLower.includes("hoàn thành") || statusLower === "completed") {
+          return "fa-check-circle";
+        } else if (statusLower.includes("hủy") || statusLower === "cancelled") {
+          return "fa-times-circle";
         } else {
-            return 'fa-clock';
+          return "fa-clock";
         }
-    }
+      }
 
-    function formatCurrency(amount) {
-        return new Intl.NumberFormat('vi-VN', {
-            style: 'currency',
-            currency: 'VND'
+      function formatCurrency(amount) {
+        return new Intl.NumberFormat("vi-VN", {
+          style: "currency",
+          currency: "VND",
         }).format(amount);
-    }
-</script>
-</body>
+      }
+    </script>
+  </body>
 </html>
