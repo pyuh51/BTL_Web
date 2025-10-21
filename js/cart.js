@@ -1,7 +1,7 @@
 class CartSystem {
   constructor() {
     this.cart = JSON.parse(localStorage.getItem("cart")) || [];
-    this.defaultImage = "images/default-food.jpg";
+    this.defaultImage = "../images/default-food.jpg";
     this.init();
   }
 
