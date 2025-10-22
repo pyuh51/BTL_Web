@@ -452,7 +452,7 @@ class CartSystem {
     document.querySelector(".checkout-modal")?.remove();
 
     setTimeout(() => {
-      window.location.href = "../index.html";
+      window.location.href = "about.html";
     }, 2000);
   }
 
