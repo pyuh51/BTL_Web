@@ -103,10 +103,6 @@ class AppState {
                             <i class="fas fa-user"></i>
                             Tài khoản
                         </a>
-                        <a href="booking-history.html" class="dropdown-item">
-                            <i class="fas fa-calendar"></i>
-                            Lịch sử đặt bàn
-                        </a>
                         <a href="order-history.html" class="dropdown-item">
                             <i class="fas fa-receipt"></i>
                             Đơn hàng
