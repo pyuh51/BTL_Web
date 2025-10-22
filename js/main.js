@@ -103,6 +103,10 @@ class AppState {
                             <i class="fas fa-user"></i>
                             Tài khoản
                         </a>
+                        <a href="profile.html" class="dropdown-item">
+                            <i class="fas fa-user"></i>
+                            Tài khoản
+                        </a>
                         <a href="order-history.html" class="dropdown-item">
                             <i class="fas fa-receipt"></i>
                             Đơn hàng
